@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+exec /usr/bin/timeout --kill-after=5s 45s /opt/video-monitoring-system/bin/python -I \
+    -m video_monitoring_system.linux_storage_recovery "$@"

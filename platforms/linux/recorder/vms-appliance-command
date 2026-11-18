@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Run: sudo vms $*" >&2
+    exit 2
+fi
+
+cd /opt/video-monitoring-system
+
+exec runuser -u vms -- env VMS_TAILSCALE_SUDO=1 \
+    VMS_RECORDER_DEVICE_CONFIG=/etc/vms/device.json \
+    /opt/video-monitoring-system/bin/vms \
+    --data-dir /var/lib/video-monitoring-system "$@"

@@ -1,0 +1,68 @@
+mqtt:
+  enabled: false
+
+detectors:
+  pilot_cpu:
+    type: cpu
+    num_threads: 2
+
+go2rtc:
+  log:
+    ffmpeg: quiet
+  webrtc:
+    candidates:
+      - "{FRIGATE_WEBRTC_LAN_CANDIDATE}"
+      - "{FRIGATE_WEBRTC_TAILSCALE_CANDIDATE}"
+  streams:
+    back_porch: "ffmpeg:{FRIGATE_BACK_PORCH_URL}#video=h264"
+
+record:
+  enabled: true
+  continuous:
+    days: 0
+  motion:
+    days: 1
+  alerts:
+    pre_capture: 5
+    post_capture: 5
+    retain:
+      days: 7
+      mode: all
+
+# Close person alerts promptly once activity stops so the OSE notification
+# bridge can deliver a complete, playable event without the 40-second default
+# delay.
+review:
+  alerts:
+    labels:
+      - person
+    cutoff_time: 10
+
+cameras:
+  back_porch:
+    ffmpeg:
+      inputs:
+        - path: rtsp://127.0.0.1:8554/back_porch
+          # The legacy MJPEG transcode inherits synthetic RTSP timestamps.
+          # The generic preset replaces those with packet arrival time so
+          # Frigate's configured detection FPS is real wall-clock FPS.
+          input_args: preset-rtsp-generic
+          roles:
+            - detect
+            - record
+    detect:
+      enabled: true
+      width: 640
+      height: 360
+      fps: 5
+    # Medium contour filtering rejects the porch vegetation's many tiny motion
+    # regions while preserving a nearby person's much larger silhouette.
+    motion:
+      contour_area: 30
+      mask:
+        moving_vegetation:
+          friendly_name: "Moving vegetation behind porch"
+          coordinates: "0.000,0.000,0.630,0.000,0.630,0.550,0.550,0.720,0.000,0.820"
+    objects:
+      track:
+        - person

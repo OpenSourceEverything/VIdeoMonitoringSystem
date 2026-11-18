@@ -1,0 +1,98 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Run as root: sudo $0" >&2
+    exit 2
+fi
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+repo_root=$(CDPATH= cd -- "$script_dir/../../.." && pwd)
+venv=/opt/video-monitoring-system
+install_mode=${VMS_INSTALL_MODE:-development}
+
+case "$install_mode" in
+    development)
+        pip_options="--disable-pip-version-check"
+        ;;
+    image)
+        test -n "${VMS_WHEELHOUSE:-}" && test -d "$VMS_WHEELHOUSE" || {
+            echo "VMS_WHEELHOUSE is required for an image install." >&2
+            exit 2
+        }
+        pip_options="--disable-pip-version-check --no-index --find-links=$VMS_WHEELHOUSE"
+        ;;
+    *)
+        echo "VMS_INSTALL_MODE must be development or image." >&2
+        exit 2
+        ;;
+esac
+
+python3 -m venv "$venv"
+# shellcheck disable=SC2086
+(umask 022; "$venv/bin/python" -m pip install $pip_options "$repo_root")
+install -D -m 0644 "$script_dir/vms-recorder.service" \
+    /etc/systemd/system/vms-recorder.service
+install -D -m 0644 "$script_dir/vms-recorder-capture.service" \
+    /etc/systemd/system/vms-recorder-capture.service
+install -D -m 0644 "$script_dir/vms-recorder-capture.timer" \
+    /etc/systemd/system/vms-recorder-capture.timer
+install -D -m 0644 "$script_dir/vms-recorder-alerts.service" \
+    /etc/systemd/system/vms-recorder-alerts.service
+install -D -m 0644 "$script_dir/vms-recorder-monitor.service" \
+    /etc/systemd/system/vms-recorder-monitor.service
+install -D -m 0644 "$script_dir/vms-recorder-maintenance.service" \
+    /etc/systemd/system/vms-recorder-maintenance.service
+install -D -m 0644 "$script_dir/vms-recorder-maintenance.timer" \
+    /etc/systemd/system/vms-recorder-maintenance.timer
+install -D -m 0644 "$script_dir/mnt-VMS_RECORDING.mount" \
+    /etc/systemd/system/mnt-VMS_RECORDING.mount
+install -D -m 0755 "$script_dir/vms-recording-recover" \
+    /usr/local/libexec/vms-recording-recover
+install -D -m 0755 "$script_dir/vms-journal-read" \
+    /usr/local/libexec/vms-journal-read
+install -D -m 0644 "$script_dir/vms-recording-ready.path" \
+    /etc/systemd/system/vms-recording-ready.path
+install -D -m 0644 "$script_dir/vms-recording-ready.service" \
+    /etc/systemd/system/vms-recording-ready.service
+install -D -m 0644 "$script_dir/vms-remote-gateway.path" \
+    /etc/systemd/system/vms-remote-gateway.path
+install -D -m 0644 "$script_dir/vms-remote-gateway.service" \
+    /etc/systemd/system/vms-remote-gateway.service
+install -D -m 0755 "$script_dir/vms-appliance-command" /usr/local/bin/vms
+install -D -m 0440 "$script_dir/vms-tailscale.sudoers" \
+    /etc/sudoers.d/vms-tailscale
+visudo -cf /etc/sudoers.d/vms-tailscale >/dev/null
+install -D -m 0440 "$script_dir/vms-journal-read.sudoers" \
+    /etc/sudoers.d/vms-journal-read
+visudo -cf /etc/sudoers.d/vms-journal-read >/dev/null
+install -D -m 0644 "$script_dir/video-monitoring-system.sysusers" \
+    /usr/lib/sysusers.d/video-monitoring-system.conf
+install -D -m 0644 "$script_dir/video-monitoring-system.tmpfiles" \
+    /usr/lib/tmpfiles.d/video-monitoring-system.conf
+systemd-sysusers /usr/lib/sysusers.d/video-monitoring-system.conf
+systemd-tmpfiles --create /usr/lib/tmpfiles.d/video-monitoring-system.conf
+if test "$install_mode" = image; then
+    systemctl disable vms-recording-ready.path vms-recorder.service \
+        vms-recorder-capture.timer vms-recorder-alerts.service vms-recorder-monitor.service vms-recorder-maintenance.timer \
+        vms-remote-gateway.path >/dev/null 2>&1 || true
+    echo "Recorder runtime installed for image provisioning."
+else
+    hostnamectl set-hostname osecameras
+    if command -v avahi-daemon >/dev/null 2>&1; then
+        systemctl enable --now avahi-daemon.service
+    fi
+    if command -v tailscale >/dev/null 2>&1; then
+        tailscale set --operator=vms || \
+            echo "Tailscale owner authorization will be requested during remote setup." >&2
+    fi
+    systemctl daemon-reload
+    systemctl enable --now vms-recording-ready.path vms-recorder.service \
+        vms-recorder-capture.timer vms-recorder-alerts.service vms-recorder-monitor.service vms-recorder-maintenance.timer \
+        vms-remote-gateway.path
+    systemctl restart vms-recorder.service
+    if systemctl is-active --quiet mnt-VMS_RECORDING.mount; then
+        systemctl restart vms-recording-ready.service
+    fi
+    echo "Recorder portal: http://osecameras.local"
+fi

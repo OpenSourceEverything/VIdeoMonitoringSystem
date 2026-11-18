@@ -1,0 +1,127 @@
+#!/bin/sh
+set -eu
+
+usage() {
+    echo "Usage: $0 DEVICE OWNER_PUBLIC_KEY" >&2
+    exit 2
+}
+
+test "$#" -eq 2 || usage
+device=$(readlink -f -- "$1")
+owner_key=$(readlink -f -- "$2")
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+repository=$(CDPATH= cd -- "$script_dir/../../.." && pwd)
+manifest="$script_dir/base-image.json"
+cache="$repository/build/recorder-image"
+
+field() {
+    python3 -c 'import json, sys; print(json.load(open(sys.argv[1], encoding="utf-8"))[sys.argv[2]])' \
+        "$manifest" "$1"
+}
+
+test "$(lsblk -dnro TYPE -- "$device")" = disk || usage
+test "$(lsblk -dnro HOTPLUG -- "$device")" = 1 || {
+    echo "Refusing a disk that is not marked hot-pluggable: $device" >&2
+    exit 2
+}
+case "$(findmnt -nr -o SOURCE /)" in
+    "$device"|"$device"p[0-9]*|"$device"[0-9]*)
+        echo "Refusing the system disk: $device" >&2
+        exit 2
+        ;;
+esac
+
+test -f "$owner_key" && test ! -L "$owner_key" || usage
+test "$(wc -l < "$owner_key")" -eq 1 || usage
+ssh-keygen -lf "$owner_key" >/dev/null
+fingerprint=$(ssh-keygen -lf "$owner_key" | awk '{print $2}')
+ssh-add -L 2>/dev/null | while IFS= read -r loaded_key; do
+    printf '%s\n' "$loaded_key" | ssh-keygen -lf -
+done | awk '{print $2}' | grep -Fxq "$fingerprint" || {
+    echo "The matching private key is not loaded in ssh-agent." >&2
+    exit 2
+}
+
+url=$(field image)
+archive_sha256=$(field sha256)
+raw_sha256=$(field raw_sha256)
+image="$cache/${url##*/}"
+download="$image.download"
+mkdir -p "$cache"
+if ! printf '%s  %s\n' "$archive_sha256" "$image" | sha256sum --check --status 2>/dev/null; then
+    rm -f "$download"
+    curl --fail --location --output "$download" "$url"
+    printf '%s  %s\n' "$archive_sha256" "$download" | sha256sum --check
+    mv "$download" "$image"
+fi
+
+serial=$(lsblk -dn -o SERIAL -- "$device" | tr -d '[:space:]')
+size=$(lsblk -dn -o SIZE -- "$device" | tr -d '[:space:]')
+confirmation="ERASE ${serial:-$device}"
+printf 'Recorder card: %s, %s\n' "$device" "$size"
+printf 'Owner key: %s\n' "$fingerprint"
+printf 'Type exactly: %s\n' "$confirmation"
+IFS= read -r entered
+test "$entered" = "$confirmation" || {
+    echo "Card erase was not confirmed." >&2
+    exit 2
+}
+
+rpi-imager --cli --sha256 "$raw_sha256" "$image" "$device"
+udevadm settle
+boot_partition=$(lsblk -nrpo NAME,TYPE -- "$device" | awk '$2 == "part" {print $1; exit}')
+test -n "$boot_partition" || {
+    echo "Written boot partition was not found." >&2
+    exit 1
+}
+boot=$(findmnt -nr -S "$boot_partition" -o TARGET || true)
+if test -z "$boot"; then
+    udisksctl mount -b "$boot_partition" >/dev/null
+    boot=$(findmnt -nr -S "$boot_partition" -o TARGET)
+fi
+for required in config.txt cmdline.txt user-data meta-data; do
+    test -f "$boot/$required" && test ! -L "$boot/$required" || {
+        echo "Written recorder boot volume is incomplete." >&2
+        exit 1
+    }
+done
+
+temporary=$(mktemp -d)
+trap 'rm -rf "$temporary"' EXIT HUP INT TERM
+python3 - "$owner_key" "$temporary/user-data" <<'PY'
+import json
+import pathlib
+import sys
+
+key = pathlib.Path(sys.argv[1]).read_text(encoding="utf-8").strip()
+document = {
+    "hostname": "osecameras",
+    "manage_etc_hosts": True,
+    "ssh_pwauth": False,
+    "disable_root": True,
+    "users": [{
+        "name": "g",
+        "gecos": "VMS owner recovery",
+        "groups": ["adm", "dialout", "sudo", "audio", "video", "plugdev", "input", "gpio", "spi", "i2c", "netdev", "render"],
+        "sudo": ["ALL=(ALL) NOPASSWD:ALL"],
+        "shell": "/bin/bash",
+        "lock_passwd": True,
+        "ssh_authorized_keys": [key],
+    }],
+    "runcmd": [["systemctl", "enable", "--now", "ssh.service"]],
+}
+pathlib.Path(sys.argv[2]).write_text(
+    "#cloud-config\n" + json.dumps(document, indent=2) + "\n",
+    encoding="utf-8",
+)
+PY
+printf 'dsmode: local\ninstance-id: vms-recorder-pilot\n' > "$temporary/meta-data"
+cp -- "$temporary/user-data" "$boot/user-data"
+cp -- "$temporary/meta-data" "$boot/meta-data"
+sync
+lsblk -nrpo NAME,TYPE -- "$device" | awk '$2 == "part" {print $1}' | \
+    while IFS= read -r partition; do
+        findmnt -nr -S "$partition" >/dev/null 2>&1 || continue
+        udisksctl unmount -b "$partition" >/dev/null
+    done
+echo "Recorder card ready with owner key $fingerprint"

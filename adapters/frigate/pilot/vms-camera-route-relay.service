@@ -1,0 +1,22 @@
+[Unit]
+Description=OSE Cameras private camera route relay
+Requires=docker.service
+After=docker.service network-online.target
+Before=vms-frigate.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vms
+Group=vms
+ExecStart=/usr/local/libexec/vms-camera-route-relay
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/video-monitoring-system
+
+[Install]
+WantedBy=multi-user.target

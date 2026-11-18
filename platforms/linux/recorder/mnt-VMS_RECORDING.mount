@@ -1,0 +1,14 @@
+[Unit]
+Description=Video Monitoring System recording drive
+BindsTo=dev-disk-by\x2dlabel-VMS_RECORDING.device
+After=dev-disk-by\x2dlabel-VMS_RECORDING.device
+
+[Mount]
+What=/dev/disk/by-label/VMS_RECORDING
+Where=/mnt/VMS_RECORDING
+Type=ext4
+Options=rw,nosuid,nodev,noexec,noatime
+DirectoryMode=0750
+
+[Install]
+WantedBy=multi-user.target

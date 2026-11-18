@@ -1,0 +1,2 @@
+d /var/lib/video-monitoring-system 0750 vms vms -
+d /mnt/VMS_RECORDING 0750 root root -

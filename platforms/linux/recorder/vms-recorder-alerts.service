@@ -1,0 +1,26 @@
+[Unit]
+Description=Video Monitoring System event alert worker
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=vms
+Group=vms
+WorkingDirectory=/opt/video-monitoring-system
+Environment=VMS_RECORDER_DEVICE_CONFIG=/etc/vms/device.json
+ExecStart=/opt/video-monitoring-system/bin/vms --data-dir /var/lib/video-monitoring-system recorder alerts --watch
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

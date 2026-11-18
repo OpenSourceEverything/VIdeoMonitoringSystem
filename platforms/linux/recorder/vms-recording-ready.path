@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch for the Video Monitoring System recording drive
+
+[Path]
+PathExists=/dev/disk/by-label/VMS_RECORDING
+Unit=vms-recording-ready.service
+
+[Install]
+WantedBy=multi-user.target

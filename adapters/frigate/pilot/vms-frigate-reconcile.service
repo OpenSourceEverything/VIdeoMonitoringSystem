@@ -1,0 +1,7 @@
+[Unit]
+Description=Reconcile OSE camera state into the private video engine
+After=network-online.target vms-frigate.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/vms-frigate-reconcile

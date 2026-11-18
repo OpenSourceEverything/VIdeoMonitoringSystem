@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-monitoring-system"
+version = "0.2.0"
+description = "Local-first recorder and camera system"
+readme = "README.md"
+license = "GPL-3.0-or-later AND CC-BY-SA-4.0 AND BSD-3-Clause"
+license-files = ["LICENSE", "LICENSES/*.txt", "LICENSING.md", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.11"
+dependencies = [
+    "cryptography>=45,<47",
+    "PyYAML>=6,<7",
+    "segno>=1.6,<2",
+    "pywebpush>=2.3,<2.4",
+]
+
+[project.scripts]
+vms = "video_monitoring_system.cli:main"
+vms-gateway = "video_monitoring_system.gateway:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

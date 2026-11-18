@@ -1,0 +1,1247 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-11",
+  "requirements_sha256": "72eed71768631321487b4e5a07f0c3cf8678288d36023748cb3993690e0cd9cd",
+  "candidates": [
+    {
+      "id": "luckfox-omni3576-8gb-box",
+      "role": "recorder",
+      "exact_model": "Luckfox Omni3576 8GB Box",
+      "configuration": "Omni3576-08000-Box; SKU 29589; 8GB/no eMMC; module + baseboard + case; select exact options",
+      "buying_url": "https://www.luckfox.com/EN-Luckfox-Omni3576?ci=552",
+      "seller": "Luckfox manufacturer store",
+      "price_usd": "178.99",
+      "price_date": "2026-11-10",
+      "specifications": "RK3576; 8GB LPDDR4X; case; dual GbE; NVMe; PSU/boot extra; 6-TOPS NPU (vendor)",
+      "local_operation": "UNKNOWN",
+      "acceleration": {
+        "video_decode": "UNKNOWN",
+        "inference": "UNKNOWN"
+      },
+      "cost": {
+        "intended_selling_price_usd": null,
+        "components": [
+          {
+            "id": "item",
+            "amount_usd": "178.99",
+            "evidence": [
+              "price_usd"
+            ]
+          },
+          {
+            "id": "required_completion_parts",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "inbound_freight",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "duty",
+            "amount_usd": null,
+            "evidence": []
+          }
+        ],
+        "known_subtotal_usd": "178.99",
+        "total_cost_usd": null
+      },
+      "gates": {
+        "exact_configuration": {
+          "status": "UNKNOWN",
+          "evidence": [
+            "configuration"
+          ],
+          "reason": "Seller offer documented; exact delivered revision, firmware and completed configuration unqualified"
+        },
+        "offline_lifecycle": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "App-free activation, reset and updates unproved"
+        },
+        "identity_and_commissioning": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Permanent identity and secure commissioning unproved"
+        },
+        "signed_updates_and_recovery": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Signed updates, rollback and revocation unproved"
+        },
+        "supply_warranty_and_licensing": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Repeatable supply, support and redistribution unqualified"
+        },
+        "complete_business_cost": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        "system_acceptance": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Full physical system acceptance NOT RUN"
+        },
+        "installed_ram_boot_and_enclosure": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "8GB configuration documented; complete power, cooling, boot and housing not qualified"
+        },
+        "maintained_linux_video_decode": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact maintained Linux hardware-decoding stack unqualified"
+        },
+        "maintained_linux_inference": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact maintained Linux inference stack unqualified"
+        },
+        "wired_home_lan": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Actual wired LAN and network recovery untested"
+        },
+        "recording_storage_and_restore": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Separate endurance-drive installation and restore unqualified"
+        },
+        "eight_camera_capacity_and_thermals": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Eight recordings, 40 detection FPS, 30% headroom and 24-hour full-load operation untested"
+        },
+        "owner_ui_and_diagnostics": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Owner setup, playback, alerts and redacted diagnostics untested"
+        },
+        "independent_board_fabrication": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Complete licensed compute-board PCB/BOM/fabrication and assembly package not established"
+        }
+      },
+      "status": "PARTIAL",
+      "blockers": [
+        {
+          "gate": "exact_configuration",
+          "message": "Seller offer documented; exact delivered revision, firmware and completed configuration unqualified"
+        },
+        {
+          "gate": "offline_lifecycle",
+          "message": "App-free activation, reset and updates unproved"
+        },
+        {
+          "gate": "identity_and_commissioning",
+          "message": "Permanent identity and secure commissioning unproved"
+        },
+        {
+          "gate": "signed_updates_and_recovery",
+          "message": "Signed updates, rollback and revocation unproved"
+        },
+        {
+          "gate": "supply_warranty_and_licensing",
+          "message": "Repeatable supply, support and redistribution unqualified"
+        },
+        {
+          "gate": "complete_business_cost",
+          "message": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        {
+          "gate": "system_acceptance",
+          "message": "Full physical system acceptance NOT RUN"
+        },
+        {
+          "gate": "installed_ram_boot_and_enclosure",
+          "message": "8GB configuration documented; complete power, cooling, boot and housing not qualified"
+        },
+        {
+          "gate": "maintained_linux_video_decode",
+          "message": "Exact maintained Linux hardware-decoding stack unqualified"
+        },
+        {
+          "gate": "maintained_linux_inference",
+          "message": "Exact maintained Linux inference stack unqualified"
+        },
+        {
+          "gate": "wired_home_lan",
+          "message": "Actual wired LAN and network recovery untested"
+        },
+        {
+          "gate": "recording_storage_and_restore",
+          "message": "Separate endurance-drive installation and restore unqualified"
+        },
+        {
+          "gate": "eight_camera_capacity_and_thermals",
+          "message": "Eight recordings, 40 detection FPS, 30% headroom and 24-hour full-load operation untested"
+        },
+        {
+          "gate": "owner_ui_and_diagnostics",
+          "message": "Owner setup, playback, alerts and redacted diagnostics untested"
+        },
+        {
+          "gate": "independent_board_fabrication",
+          "message": "Complete licensed compute-board PCB/BOM/fabrication and assembly package not established"
+        }
+      ],
+      "evidence": {
+        "exact_model": [
+          "exact_model"
+        ],
+        "configuration": [
+          "configuration"
+        ],
+        "buying_url": [
+          "buying_url"
+        ],
+        "seller": [
+          "seller"
+        ],
+        "price_usd": [
+          "price_usd"
+        ],
+        "price_date": [
+          "price_date"
+        ],
+        "specifications": [
+          "specifications"
+        ]
+      },
+      "sourcing": {
+        "full_product_name": "Luckfox Omni3576-08000-Box RK3576, 8GB RAM, no eMMC, aluminum case; SKU 29589",
+        "manufacturer": "Luckfox",
+        "manufacturer_part_number": "Omni3576-08000-Box",
+        "search_terms": "Luckfox Omni3576 8GB",
+        "vendors": {
+          "manufacturer": {
+            "search_url": null,
+            "product_url": "https://www.luckfox.com/EN-Luckfox-Omni3576?ci=552",
+            "seller": "Luckfox manufacturer store",
+            "seller_sku": "29589",
+            "result": "SELECT_OPTIONS",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "Select the complete configuration above; published option/catalog prices are not a verified selected-variant delivered quote.",
+            "evidence": [
+              "vendor_manufacturer"
+            ]
+          },
+          "amazon": {
+            "search_url": "https://www.amazon.com/s?k=Luckfox+Omni3576+8GB",
+            "product_url": "https://www.amazon.com/dp/B0DQQ229NS",
+            "seller": null,
+            "seller_sku": "B0DQQ229NS",
+            "result": "DIFFERENT_CONFIGURATION",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "Inspected Amazon title is Omni3576-04000: 4GB RAM, no eMMC and not the requested 8GB boxed configuration. Do not use its price.",
+            "evidence": [
+              "vendor_amazon"
+            ]
+          },
+          "alibaba": {
+            "search_url": "https://www.alibaba.com/trade/search?SearchText=Luckfox+Omni3576+8GB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_alibaba"
+            ]
+          },
+          "ebay": {
+            "search_url": "https://www.ebay.com/sch/i.html?_nkw=Luckfox+Omni3576+8GB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_ebay"
+            ]
+          },
+          "digikey": {
+            "search_url": "https://www.digikey.com/en/products?keywords=Luckfox+Omni3576+8GB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_digikey"
+            ]
+          },
+          "mouser": {
+            "search_url": "https://www.mouser.com/c/?q=Luckfox+Omni3576+8GB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_mouser"
+            ]
+          },
+          "waveshare": {
+            "search_url": null,
+            "product_url": "https://www.waveshare.com/luckfox-omni3576.htm",
+            "seller": null,
+            "seller_sku": null,
+            "result": "BLOCKED",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "Vendor product-page read timed out. Exact 8GB boxed variant, price and stock remain UNKNOWN.",
+            "evidence": [
+              "vendor_waveshare"
+            ]
+          }
+        }
+      },
+      "report_details": {
+        "included": [
+          "8GB/no-eMMC compute module, carrier and aluminum case"
+        ],
+        "still_needed": [
+          "Qualified PSU/cable, separate boot media and any cooling completion",
+          "Separate endurance-rated recording SSD"
+        ],
+        "technical": {
+          "processor": "Rockchip RK3576; four Cortex-A72 plus four Cortex-A53 cores",
+          "ram": "8GB LPDDR4X",
+          "boot_storage": "microSD required for this no-eMMC option; not priced",
+          "video_decode": "Vendor publishes an H.264 hardware decoder; exact Linux/OSE integration unqualified",
+          "inference": "Vendor publishes a 6-TOPS NPU; RKNN software route documented, full workload unqualified",
+          "network": "Two Gigabit Ethernet ports",
+          "recording_connection": "M.2 NVMe; separate recording drive required",
+          "linux_support": "Vendor publishes Debian 12 and Buildroot resources; exact supported image/runtime set unqualified",
+          "proprietary_dependencies": "Rockchip runtime/firmware dependencies; openness and redistribution rights UNKNOWN",
+          "documentation_urls": [
+            "https://www.luckfox.com/EN-Luckfox-Omni3576",
+            "https://wiki.luckfox.com/Luckfox-Omni3576/Luckfox-Omni3576-quick-start/"
+          ]
+        },
+        "fabrication": {
+          "complete_files": "UNKNOWN",
+          "scope": "module_and_carrier",
+          "available_files": [
+            "Vendor lists schematic PDFs, 2D mechanical CAD and 3D models; complete module coverage unverified"
+          ],
+          "missing_or_unverified": [
+            "Editable schematics and routed PCB layout matching the sold revision",
+            "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+            "Programming, provisioning and production-test instructions; component sourceability"
+          ],
+          "download_urls": [
+            "https://wiki.luckfox.com/Luckfox-Omni3576/Download/"
+          ],
+          "commercial_reuse": "UNKNOWN",
+          "license_name": null,
+          "license_url": null,
+          "feasible": "UNKNOWN",
+          "evidence_note": "Download index does not establish a complete module/carrier production package or commercial rights. Independent fabrication, component supply and build cost are unverified.",
+          "evidence_urls": [],
+          "unit_cost_usd": null,
+          "quantity_at_cost": null,
+          "engineering_tooling_usd": null
+        },
+        "offer_terms": {
+          "manufacturer": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "amazon": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "alibaba": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "ebay": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "digikey": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "mouser": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "waveshare": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          }
+        },
+        "checked_on": "2026-11-11",
+        "evidence": [
+          "report_details"
+        ]
+      }
+    },
+    {
+      "id": "seeed-rk3576-30-8gb",
+      "role": "recorder",
+      "exact_model": "Seeed reComputer RK3576-30 8GB",
+      "configuration": "SKU 100052518; 8GB LPDDR5; enclosed/fan-cooled; PSU and 32GB boot microSD; recording SSD separate",
+      "buying_url": "https://www.seeedstudio.com/reComputer-RK3576-30-p-6815.html",
+      "seller": "Seeed Studio manufacturer store",
+      "price_usd": "199.00",
+      "price_date": "2026-11-10",
+      "specifications": "RK3576; 8GB LPDDR5; case/fan/PSU/32GB boot microSD; dual GbE; NVMe 2280; 6-TOPS NPU (vendor)",
+      "local_operation": "UNKNOWN",
+      "acceleration": {
+        "video_decode": "UNKNOWN",
+        "inference": "UNKNOWN"
+      },
+      "cost": {
+        "intended_selling_price_usd": null,
+        "components": [
+          {
+            "id": "item",
+            "amount_usd": "199.00",
+            "evidence": [
+              "price_usd"
+            ]
+          },
+          {
+            "id": "required_completion_parts",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "inbound_freight",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "duty",
+            "amount_usd": null,
+            "evidence": []
+          }
+        ],
+        "known_subtotal_usd": "199.00",
+        "total_cost_usd": null
+      },
+      "gates": {
+        "exact_configuration": {
+          "status": "UNKNOWN",
+          "evidence": [
+            "configuration"
+          ],
+          "reason": "Seller offer documented; exact delivered revision, firmware and completed configuration unqualified"
+        },
+        "offline_lifecycle": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "App-free activation, reset and updates unproved"
+        },
+        "identity_and_commissioning": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Permanent identity and secure commissioning unproved"
+        },
+        "signed_updates_and_recovery": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Signed updates, rollback and revocation unproved"
+        },
+        "supply_warranty_and_licensing": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Repeatable supply, support and redistribution unqualified"
+        },
+        "complete_business_cost": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        "system_acceptance": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Full physical system acceptance NOT RUN"
+        },
+        "installed_ram_boot_and_enclosure": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "8GB configuration documented; complete power, cooling, boot and housing not qualified"
+        },
+        "maintained_linux_video_decode": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact maintained Linux hardware-decoding stack unqualified"
+        },
+        "maintained_linux_inference": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact maintained Linux inference stack unqualified"
+        },
+        "wired_home_lan": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Actual wired LAN and network recovery untested"
+        },
+        "recording_storage_and_restore": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Separate endurance-drive installation and restore unqualified"
+        },
+        "eight_camera_capacity_and_thermals": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Eight recordings, 40 detection FPS, 30% headroom and 24-hour full-load operation untested"
+        },
+        "owner_ui_and_diagnostics": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Owner setup, playback, alerts and redacted diagnostics untested"
+        },
+        "independent_board_fabrication": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Complete licensed compute-board PCB/BOM/fabrication and assembly package not established"
+        }
+      },
+      "status": "PARTIAL",
+      "blockers": [
+        {
+          "gate": "exact_configuration",
+          "message": "Seller offer documented; exact delivered revision, firmware and completed configuration unqualified"
+        },
+        {
+          "gate": "offline_lifecycle",
+          "message": "App-free activation, reset and updates unproved"
+        },
+        {
+          "gate": "identity_and_commissioning",
+          "message": "Permanent identity and secure commissioning unproved"
+        },
+        {
+          "gate": "signed_updates_and_recovery",
+          "message": "Signed updates, rollback and revocation unproved"
+        },
+        {
+          "gate": "supply_warranty_and_licensing",
+          "message": "Repeatable supply, support and redistribution unqualified"
+        },
+        {
+          "gate": "complete_business_cost",
+          "message": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        {
+          "gate": "system_acceptance",
+          "message": "Full physical system acceptance NOT RUN"
+        },
+        {
+          "gate": "installed_ram_boot_and_enclosure",
+          "message": "8GB configuration documented; complete power, cooling, boot and housing not qualified"
+        },
+        {
+          "gate": "maintained_linux_video_decode",
+          "message": "Exact maintained Linux hardware-decoding stack unqualified"
+        },
+        {
+          "gate": "maintained_linux_inference",
+          "message": "Exact maintained Linux inference stack unqualified"
+        },
+        {
+          "gate": "wired_home_lan",
+          "message": "Actual wired LAN and network recovery untested"
+        },
+        {
+          "gate": "recording_storage_and_restore",
+          "message": "Separate endurance-drive installation and restore unqualified"
+        },
+        {
+          "gate": "eight_camera_capacity_and_thermals",
+          "message": "Eight recordings, 40 detection FPS, 30% headroom and 24-hour full-load operation untested"
+        },
+        {
+          "gate": "owner_ui_and_diagnostics",
+          "message": "Owner setup, playback, alerts and redacted diagnostics untested"
+        },
+        {
+          "gate": "independent_board_fabrication",
+          "message": "Complete licensed compute-board PCB/BOM/fabrication and assembly package not established"
+        }
+      ],
+      "evidence": {
+        "exact_model": [
+          "exact_model"
+        ],
+        "configuration": [
+          "configuration"
+        ],
+        "buying_url": [
+          "buying_url"
+        ],
+        "seller": [
+          "seller"
+        ],
+        "price_usd": [
+          "price_usd"
+        ],
+        "price_date": [
+          "price_date"
+        ],
+        "specifications": [
+          "specifications"
+        ]
+      },
+      "sourcing": {
+        "full_product_name": "Seeed Studio reComputer RK3576-30 Open Rockchip AI Box, 8GB LPDDR5; 100052518",
+        "manufacturer": "Seeed Studio",
+        "manufacturer_part_number": "100052518",
+        "search_terms": "Seeed reComputer RK3576-30 100052518",
+        "vendors": {
+          "manufacturer": {
+            "search_url": null,
+            "product_url": "https://www.seeedstudio.com/reComputer-RK3576-30-p-6815.html",
+            "seller": "Seeed Studio manufacturer store",
+            "seller_sku": "100052518",
+            "result": "EXACT",
+            "price_usd": "199.00",
+            "stock": "IN_STOCK",
+            "checked_on": "2026-11-10",
+            "note": "Existing exact-SKU source retained; tax, delivery and complete product acceptance are separate.",
+            "evidence": [
+              "vendor_manufacturer"
+            ]
+          },
+          "amazon": {
+            "search_url": "https://www.amazon.com/s?k=Seeed+reComputer+RK3576-30+100052518",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_amazon"
+            ]
+          },
+          "alibaba": {
+            "search_url": "https://www.alibaba.com/trade/search?SearchText=Seeed+reComputer+RK3576-30+100052518",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_alibaba"
+            ]
+          },
+          "ebay": {
+            "search_url": "https://www.ebay.com/sch/i.html?_nkw=Seeed+reComputer+RK3576-30+100052518",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_ebay"
+            ]
+          },
+          "digikey": {
+            "search_url": "https://www.digikey.com/en/products?keywords=Seeed+reComputer+RK3576-30+100052518",
+            "product_url": "https://www.digikey.com/en/products/detail/seeed-technology-co-ltd/100052518/29810682",
+            "seller": "DigiKey",
+            "seller_sku": "1597-100052518-ND",
+            "result": "EXACT",
+            "price_usd": "231.25",
+            "stock": "IN_STOCK",
+            "checked_on": "2026-11-10",
+            "note": "MPN 100052518; page reports two in stock and quantity-one USD231.25. Tariff, freight, taxes and included-box contents require confirmation.",
+            "evidence": [
+              "vendor_digikey"
+            ]
+          },
+          "mouser": {
+            "search_url": "https://www.mouser.com/c/?q=Seeed+reComputer+RK3576-30+100052518",
+            "product_url": "https://www.mouser.com/ProductDetail/Seeed-Studio/100052518?qs=LnCj936TGbWmMHmrWz%252Bdlw%3D%3D",
+            "seller": "Mouser",
+            "seller_sku": "713-100052518",
+            "result": "BLOCKED",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "US product-page read unavailable. Regional Mouser catalog confirms MPN100052518 and installed 8GB, but US price/stock UNKNOWN.",
+            "evidence": [
+              "vendor_mouser"
+            ]
+          },
+          "antratek": {
+            "search_url": null,
+            "product_url": "https://www.antratek.com/recomputer-rk3576-30-8gb",
+            "seller": "Antratek",
+            "seller_sku": "100052518",
+            "result": "EXACT",
+            "price_usd": null,
+            "stock": "IN_STOCK",
+            "checked_on": "2026-11-10",
+            "note": "Exact 8GB SKU listed in stock; comparable USD item/delivered price not established.",
+            "evidence": [
+              "vendor_antratek"
+            ]
+          },
+          "openelab": {
+            "search_url": null,
+            "product_url": "https://openelab.com/products/seeed-studio-recomputer-rk3576-30-open-rockchip-ai-box-8gb-ram",
+            "seller": "OpenELAB",
+            "seller_sku": "Seeed-100052518",
+            "result": "EXACT",
+            "price_usd": "314.73",
+            "stock": "OUT_OF_STOCK",
+            "checked_on": "2026-11-10",
+            "note": "Exact 8GB SKU, USD314.73, but Pre-order. Not a verified immediately available unit.",
+            "evidence": [
+              "vendor_openelab"
+            ]
+          }
+        }
+      },
+      "report_details": {
+        "included": [
+          "8GB enclosed computer with active cooling",
+          "12V/3A adapter and 32GB boot microSD, according to retained package evidence"
+        ],
+        "still_needed": [
+          "Any required installation accessories remain unpriced",
+          "Separate endurance-rated NVMe recording SSD"
+        ],
+        "technical": {
+          "processor": "Rockchip RK3576; four Cortex-A72 plus four Cortex-A53 cores",
+          "ram": "8GB LPDDR5",
+          "boot_storage": "Included 32GB microSD; no included eMMC asserted",
+          "video_decode": "Vendor publishes an H.264 hardware decoder; exact Linux/OSE integration unqualified",
+          "inference": "Vendor publishes a 6-TOPS NPU; RKNN software route documented, full workload unqualified",
+          "network": "Two Gigabit Ethernet ports",
+          "recording_connection": "M.2 NVMe; separate recording drive required",
+          "linux_support": "Vendor publishes Armbian resources; exact supported kernel, decode and inference combination unqualified",
+          "proprietary_dependencies": "Rockchip runtime/firmware dependencies; openness and redistribution rights UNKNOWN",
+          "documentation_urls": [
+            "https://sensecraft.seeed.cc/ai-lab/en/tutorials/rk/edge-ai-computer/rk3576/recomputer-rk3576-overview",
+            "https://sensecraft.seeed.cc/ai-lab/en/tutorials/rk/application/aiot/frigate/getting-started-with-frigate-nvr-on-recomputer-rk3576"
+          ]
+        },
+        "fabrication": {
+          "complete_files": "UNKNOWN",
+          "scope": "complete_compute_board",
+          "available_files": [
+            "38-page compute-board schematic PDF and mechanical STEP model"
+          ],
+          "missing_or_unverified": [
+            "Editable schematics and routed PCB layout matching the sold revision",
+            "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+            "Programming, provisioning and production-test instructions; component sourceability"
+          ],
+          "download_urls": [
+            "https://sensecraft.seeed.cc/ai-lab/en/tutorials/rk/edge-ai-computer/rk3576/getting-start/recomputer-rk3576-system-images-and-resource-downloads",
+            "https://files.seeedstudio.com/wiki/reComputer_RK/Documents/recomputer_rk3576/RECOMPUTER%20RK3576_V1.0_SCH_2026.pdf",
+            "https://files.seeedstudio.com/wiki/reComputer_RK/Documents/recomputer_rk3576/reComputer_RK3576.stp"
+          ],
+          "commercial_reuse": "UNKNOWN",
+          "license_name": null,
+          "license_url": null,
+          "feasible": "UNKNOWN",
+          "evidence_note": "Schematic covers compute circuitry, but editable routing/BOM/production outputs and commercial reproduction rights are unestablished. No independent manufacturing quote or build confirmation.",
+          "evidence_urls": [],
+          "unit_cost_usd": null,
+          "quantity_at_cost": null,
+          "engineering_tooling_usd": null
+        },
+        "offer_terms": {
+          "manufacturer": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "amazon": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "alibaba": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "ebay": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "digikey": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "mouser": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "antratek": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "openelab": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          }
+        },
+        "checked_on": "2026-11-11",
+        "evidence": [
+          "report_details"
+        ]
+      }
+    },
+    {
+      "id": "friendlyelec-nanopi-m5-8gb-kit",
+      "role": "recorder",
+      "exact_model": "FriendlyElec NanoPi M5 8GB kit",
+      "configuration": "8GB LPDDR5; case/WiFi combo + 64GB UFS boot; configured option sum; PSU and SSD separate",
+      "buying_url": "https://www.friendlyelec.com/index.php?route=product/product&product_id=309",
+      "seller": "FriendlyElec manufacturer store",
+      "price_usd": "203.00",
+      "price_date": "2026-11-10",
+      "specifications": "RK3576; 8GB LPDDR5; case/WiFi; 64GB UFS boot; dual GbE; NVMe; PSU extra; 6-TOPS NPU (vendor)",
+      "local_operation": "UNKNOWN",
+      "acceleration": {
+        "video_decode": "UNKNOWN",
+        "inference": "UNKNOWN"
+      },
+      "cost": {
+        "intended_selling_price_usd": null,
+        "components": [
+          {
+            "id": "item",
+            "amount_usd": "203.00",
+            "evidence": [
+              "price_usd"
+            ]
+          },
+          {
+            "id": "required_completion_parts",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "inbound_freight",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "duty",
+            "amount_usd": null,
+            "evidence": []
+          }
+        ],
+        "known_subtotal_usd": "203.00",
+        "total_cost_usd": null
+      },
+      "gates": {
+        "exact_configuration": {
+          "status": "UNKNOWN",
+          "evidence": [
+            "configuration"
+          ],
+          "reason": "Seller offer documented; exact delivered revision, firmware and completed configuration unqualified"
+        },
+        "offline_lifecycle": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "App-free activation, reset and updates unproved"
+        },
+        "identity_and_commissioning": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Permanent identity and secure commissioning unproved"
+        },
+        "signed_updates_and_recovery": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Signed updates, rollback and revocation unproved"
+        },
+        "supply_warranty_and_licensing": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Repeatable supply, support and redistribution unqualified"
+        },
+        "complete_business_cost": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        "system_acceptance": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Full physical system acceptance NOT RUN"
+        },
+        "installed_ram_boot_and_enclosure": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "8GB configuration documented; complete power, cooling, boot and housing not qualified"
+        },
+        "maintained_linux_video_decode": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact maintained Linux hardware-decoding stack unqualified"
+        },
+        "maintained_linux_inference": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact maintained Linux inference stack unqualified"
+        },
+        "wired_home_lan": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Actual wired LAN and network recovery untested"
+        },
+        "recording_storage_and_restore": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Separate endurance-drive installation and restore unqualified"
+        },
+        "eight_camera_capacity_and_thermals": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Eight recordings, 40 detection FPS, 30% headroom and 24-hour full-load operation untested"
+        },
+        "owner_ui_and_diagnostics": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Owner setup, playback, alerts and redacted diagnostics untested"
+        },
+        "independent_board_fabrication": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Complete licensed compute-board PCB/BOM/fabrication and assembly package not established"
+        }
+      },
+      "status": "PARTIAL",
+      "blockers": [
+        {
+          "gate": "exact_configuration",
+          "message": "Seller offer documented; exact delivered revision, firmware and completed configuration unqualified"
+        },
+        {
+          "gate": "offline_lifecycle",
+          "message": "App-free activation, reset and updates unproved"
+        },
+        {
+          "gate": "identity_and_commissioning",
+          "message": "Permanent identity and secure commissioning unproved"
+        },
+        {
+          "gate": "signed_updates_and_recovery",
+          "message": "Signed updates, rollback and revocation unproved"
+        },
+        {
+          "gate": "supply_warranty_and_licensing",
+          "message": "Repeatable supply, support and redistribution unqualified"
+        },
+        {
+          "gate": "complete_business_cost",
+          "message": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        {
+          "gate": "system_acceptance",
+          "message": "Full physical system acceptance NOT RUN"
+        },
+        {
+          "gate": "installed_ram_boot_and_enclosure",
+          "message": "8GB configuration documented; complete power, cooling, boot and housing not qualified"
+        },
+        {
+          "gate": "maintained_linux_video_decode",
+          "message": "Exact maintained Linux hardware-decoding stack unqualified"
+        },
+        {
+          "gate": "maintained_linux_inference",
+          "message": "Exact maintained Linux inference stack unqualified"
+        },
+        {
+          "gate": "wired_home_lan",
+          "message": "Actual wired LAN and network recovery untested"
+        },
+        {
+          "gate": "recording_storage_and_restore",
+          "message": "Separate endurance-drive installation and restore unqualified"
+        },
+        {
+          "gate": "eight_camera_capacity_and_thermals",
+          "message": "Eight recordings, 40 detection FPS, 30% headroom and 24-hour full-load operation untested"
+        },
+        {
+          "gate": "owner_ui_and_diagnostics",
+          "message": "Owner setup, playback, alerts and redacted diagnostics untested"
+        },
+        {
+          "gate": "independent_board_fabrication",
+          "message": "Complete licensed compute-board PCB/BOM/fabrication and assembly package not established"
+        }
+      ],
+      "evidence": {
+        "exact_model": [
+          "exact_model"
+        ],
+        "configuration": [
+          "configuration"
+        ],
+        "buying_url": [
+          "buying_url"
+        ],
+        "seller": [
+          "seller"
+        ],
+        "price_usd": [
+          "price_usd"
+        ],
+        "price_date": [
+          "price_date"
+        ],
+        "specifications": [
+          "specifications"
+        ]
+      },
+      "sourcing": {
+        "full_product_name": "FriendlyElec NanoPi M5 RK3576, 8GB LPDDR5, case/WiFi combo and 64GB UFS boot",
+        "manufacturer": "FriendlyElec",
+        "manufacturer_part_number": "NanoPi M5",
+        "search_terms": "FriendlyElec NanoPi M5 8GB",
+        "vendors": {
+          "manufacturer": {
+            "search_url": null,
+            "product_url": "https://www.friendlyelec.com/index.php?route=product/product&product_id=309",
+            "seller": "FriendlyElec manufacturer store",
+            "seller_sku": "NanoPi M5",
+            "result": "SELECT_OPTIONS",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "Select the complete configuration above; published option/catalog prices are not a verified selected-variant delivered quote.",
+            "evidence": [
+              "vendor_manufacturer"
+            ]
+          },
+          "amazon": {
+            "search_url": "https://www.amazon.com/s?k=FriendlyElec+NanoPi+M5+8GB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_amazon"
+            ]
+          },
+          "alibaba": {
+            "search_url": "https://www.alibaba.com/trade/search?SearchText=FriendlyElec+NanoPi+M5+8GB",
+            "product_url": "https://www.alibaba.com/product-detail/Chipboard-Friendly-Nanopi-M5-Rockchip-Rk3576_1601469175216.html",
+            "seller": "Shanghai Xuanxin Technology Co., Ltd.",
+            "seller_sku": "1601469175216",
+            "result": "SELECT_OPTIONS",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "8GB and complete-machine options appear; exact 8GB/case/64GB-UFS contents, MOQ interpretation, stock and price UNKNOWN. Headline range is not this configuration quote.",
+            "evidence": [
+              "vendor_alibaba"
+            ]
+          },
+          "ebay": {
+            "search_url": "https://www.ebay.com/sch/i.html?_nkw=FriendlyElec+NanoPi+M5+8GB",
+            "product_url": "https://www.ebay.com/itm/227221711804",
+            "seller": "steven-karr",
+            "seller_sku": "227221711804",
+            "result": "DIFFERENT_CONFIGURATION",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "Open-box 8GB NanoPi M5 with claimed 256GB SSD and OpenWRT, not this 64GB-UFS boot kit. No returns stated; headline price is not ranked as our configuration.",
+            "evidence": [
+              "vendor_ebay"
+            ]
+          },
+          "digikey": {
+            "search_url": "https://www.digikey.com/en/products?keywords=FriendlyElec+NanoPi+M5+8GB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_digikey"
+            ]
+          },
+          "mouser": {
+            "search_url": "https://www.mouser.com/c/?q=FriendlyElec+NanoPi+M5+8GB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_mouser"
+            ]
+          }
+        }
+      },
+      "report_details": {
+        "included": [
+          "8GB board plus selected case/WiFi combo and 64GB UFS boot module"
+        ],
+        "still_needed": [
+          "Qualified PSU/cable and any cooling completion",
+          "Separate endurance-rated NVMe recording SSD"
+        ],
+        "technical": {
+          "processor": "Rockchip RK3576; four Cortex-A72 plus four Cortex-A53 cores",
+          "ram": "8GB LPDDR5",
+          "boot_storage": "Selected 64GB UFS module; separate from recording NVMe",
+          "video_decode": "Vendor publishes an H.264 hardware decoder; exact Linux/OSE integration unqualified",
+          "inference": "Vendor publishes a 6-TOPS NPU; RKNN software route documented, full workload unqualified",
+          "network": "Two Gigabit Ethernet ports",
+          "recording_connection": "M.2 NVMe; separate recording drive required",
+          "linux_support": "Vendor publishes Debian/Ubuntu and other images; exact maintained acceleration stack unqualified",
+          "proprietary_dependencies": "Rockchip runtime/firmware dependencies; openness and redistribution rights UNKNOWN",
+          "documentation_urls": [
+            "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M5"
+          ]
+        },
+        "fabrication": {
+          "complete_files": "UNKNOWN",
+          "scope": "complete_compute_board",
+          "available_files": [
+            "LPDDR5 schematic PDF and vendor-listed DXF archive; archive routing/production completeness unverified"
+          ],
+          "missing_or_unverified": [
+            "Editable schematics and routed PCB layout matching the sold revision",
+            "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+            "Programming, provisioning and production-test instructions; component sourceability"
+          ],
+          "download_urls": [
+            "https://wiki.friendlyelec.com/wiki/index.php/NanoPi_M5#Schematic,_PCB_CAD_File",
+            "https://wiki.friendlyelec.com/wiki/images/9/97/NanoPi_M5_LP5_2411_SCH.pdf",
+            "https://wiki.friendlyelec.com/wiki/images/e/e1/NanoPi_M5_2411_DXF.zip"
+          ],
+          "commercial_reuse": "UNKNOWN",
+          "license_name": null,
+          "license_url": null,
+          "feasible": "UNKNOWN",
+          "evidence_note": "Manufacturer lists schematic/DXF downloads; the DXF archive was not qualified as routed PCB source or a full production package. Hardware reproduction rights and independent assembly readiness remain unverified.",
+          "evidence_urls": [],
+          "unit_cost_usd": null,
+          "quantity_at_cost": null,
+          "engineering_tooling_usd": null
+        },
+        "offer_terms": {
+          "manufacturer": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "amazon": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "alibaba": {
+            "quantity_moq": "Page says one bag; exact configured quantity/price UNKNOWN",
+            "shipping_origin": "Supplier lists Guangdong, China; fulfillment origin unverified",
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "ebay": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": "Open box; seller states no returns; different SSD configuration",
+            "included_parts": null
+          },
+          "digikey": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "mouser": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          }
+        },
+        "checked_on": "2026-11-11",
+        "evidence": [
+          "report_details"
+        ]
+      }
+    }
+  ]
+}

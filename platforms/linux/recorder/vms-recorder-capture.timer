@@ -1,0 +1,11 @@
+[Unit]
+Description=Schedule Video Monitoring System recording cycles
+
+[Timer]
+OnBootSec=10
+OnUnitInactiveSec=2
+AccuracySec=1
+Unit=vms-recorder-capture.service
+
+[Install]
+WantedBy=timers.target

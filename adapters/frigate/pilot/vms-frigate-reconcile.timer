@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodically reconcile OSE camera network addresses
+
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=2min
+AccuracySec=15s
+Unit=vms-frigate-reconcile.service
+
+[Install]
+WantedBy=timers.target

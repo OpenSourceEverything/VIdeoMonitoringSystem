@@ -1,0 +1,16 @@
+[Unit]
+Description=OSE disposable DPP radio and Android qualification probe
+After=local-fs.target NetworkManager.service wpa_supplicant.service
+ConditionPathExists=/boot/firmware/vms-dpp-reference-probe
+ConditionPathExists=!/etc/vms/device.json
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/vms-dpp-reference-probe
+TimeoutStartSec=360
+StandardOutput=journal+console
+StandardError=journal+console
+SyslogIdentifier=vms-dpp-reference-probe
+
+[Install]
+WantedBy=multi-user.target

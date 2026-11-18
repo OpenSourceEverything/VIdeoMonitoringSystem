@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch for owner-gateway enrollment
+
+[Path]
+PathExists=/var/lib/video-monitoring-system/gateway-tunnel.json
+Unit=vms-remote-gateway.service
+
+[Install]
+WantedBy=multi-user.target

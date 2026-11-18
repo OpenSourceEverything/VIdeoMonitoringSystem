@@ -1,0 +1,4 @@
+#!/bin/sh
+# A defense-in-depth forced command for the tunnel key. The recorder requests
+# no session at all (-N); any attempted command receives no shell.
+exec /usr/bin/sleep infinity

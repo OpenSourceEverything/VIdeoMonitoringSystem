@@ -1,0 +1,11 @@
+[Unit]
+Description=Schedule Video Monitoring System recording retention
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=30m
+Unit=vms-recorder-maintenance.service
+
+[Install]
+WantedBy=timers.target

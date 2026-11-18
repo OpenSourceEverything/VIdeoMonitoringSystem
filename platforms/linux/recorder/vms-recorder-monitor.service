@@ -1,0 +1,27 @@
+[Unit]
+Description=Video Monitoring System passive health history
+After=network-online.target vms-recorder.service
+Wants=network-online.target
+ConditionPathExists=/var/lib/video-monitoring-system/recorder-state.json
+
+[Service]
+Type=simple
+User=vms
+Group=vms
+SupplementaryGroups=video
+WorkingDirectory=/opt/video-monitoring-system
+ExecStart=/opt/video-monitoring-system/bin/python -m video_monitoring_system.monitoring --data-dir /var/lib/video-monitoring-system
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

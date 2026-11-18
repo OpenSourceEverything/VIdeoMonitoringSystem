@@ -1,0 +1,1117 @@
+{
+  "schema_version": 1,
+  "role": "camera",
+  "description": "Camera specification claims, reviewed sources and dated exact-offer research; not hardware qualification.",
+  "claims": {
+    "annke-c500p-i51hj": {
+      "exact_model": {
+        "value": "ANNKE C500P I51HJ",
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Public source reviewed November 8; published claims, not a hardware test."
+      },
+      "configuration": {
+        "value": "AN-I51HJ0102; white turret; single camera",
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Public source reviewed November 8; published claims, not a hardware test."
+      },
+      "buying_url": {
+        "value": "https://www.annke.com/products/c500p?variant=44179699237114",
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Public source reviewed November 8; published claims, not a hardware test."
+      },
+      "seller": {
+        "value": "ANNKE official",
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Public source reviewed November 8; published claims, not a hardware test."
+      },
+      "price_usd": {
+        "value": "44.99",
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Public source reviewed November 8; published claims, not a hardware test."
+      },
+      "price_date": {
+        "value": "2026-11-08",
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Public source reviewed November 8; published claims, not a hardware test."
+      },
+      "specifications": {
+        "value": "Published: 3072x1728 at 20 FPS; PoE; mic/speaker; RTSP; H.264 main/sub; IP67; 30m IR",
+        "sources": [
+          {
+            "url": "https://cdn.shopify.com/s/files/1/0110/6385/3156/files/c500p2026.pdf",
+            "observed_on": "2026-11-08",
+            "basis": "manufacturer_specification",
+            "support": "SUPPORTED",
+            "locator": "Exact model specification",
+            "excerpt": "I51HJ table: 3072x1728 at 20fps; H.264 listed for main/sub; mic and speaker; RTSP; IP67; IR up to 30m; 802.3af"
+          }
+        ],
+        "note": "Public source reviewed November 8; published claims, not a hardware test."
+      },
+      "sourcing_identity": {
+        "value": {
+          "full_product_name": "ANNKE C500P I51HJ 5MP PoE turret IP camera, single white AN-I51HJ0102",
+          "manufacturer": "ANNKE",
+          "manufacturer_part_number": "AN-I51HJ0102",
+          "search_terms": "ANNKE C500P I51HJ"
+        },
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Search terms are navigation text; full name describes the existing exact candidate, not a new hardware qualification."
+      },
+      "vendor_manufacturer": {
+        "value": {
+          "search_url": null,
+          "product_url": "https://www.annke.com/products/c500p?variant=44179699237114",
+          "seller": "ANNKE official",
+          "seller_sku": "AN-I51HJ0102",
+          "result": "EXACT",
+          "price_usd": "44.99",
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-08",
+          "note": "Existing exact-SKU source retained; tax, delivery and complete product acceptance are separate."
+        },
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_amazon": {
+        "value": {
+          "search_url": "https://www.amazon.com/s?k=ANNKE+C500P+I51HJ",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.amazon.com/s?k=ANNKE+C500P+I51HJ",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for ANNKE C500P I51HJ. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_alibaba": {
+        "value": {
+          "search_url": "https://www.alibaba.com/trade/search?SearchText=ANNKE+C500P+I51HJ",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.alibaba.com/trade/search?SearchText=ANNKE+C500P+I51HJ",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for ANNKE C500P I51HJ. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_ebay": {
+        "value": {
+          "search_url": "https://www.ebay.com/sch/i.html?_nkw=ANNKE+C500P+I51HJ",
+          "product_url": "https://www.ebay.com/itm/146768924428",
+          "seller": "annketech",
+          "seller_sku": "146768924428",
+          "result": "UNVERIFIED",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "C500P listing found, but exact I51HJ/AN-I51HJ0102 identity not established from page text; do not substitute its advertised price."
+        },
+        "sources": [
+          {
+            "url": "https://www.ebay.com/itm/146768924428",
+            "observed_on": "2026-11-10",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Product identity, selected configuration, price and availability fields",
+            "excerpt": "eBay primary listing names ANNKE C500P and seller annketech; searched page does not establish exact I51HJ/AN-I51HJ0102 identity."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_digikey": {
+        "value": {
+          "search_url": "https://www.digikey.com/en/products?keywords=ANNKE+C500P+I51HJ",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.digikey.com/en/products?keywords=ANNKE+C500P+I51HJ",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for ANNKE C500P I51HJ. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_mouser": {
+        "value": {
+          "search_url": "https://www.mouser.com/c/?q=ANNKE+C500P+I51HJ",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.mouser.com/c/?q=ANNKE+C500P+I51HJ",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for ANNKE C500P I51HJ. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "report_details": {
+        "value": {
+          "included": [
+            "Single camera; exact accessory contents UNKNOWN"
+          ],
+          "still_needed": [
+            "Qualified PoE power, ordinary cabling and installation accessories; complete costs UNKNOWN"
+          ],
+          "technical": {
+            "processor": null,
+            "ram": null,
+            "boot_storage": null,
+            "video_decode": null,
+            "inference": null,
+            "network": "PoE Ethernet according to retained listing; exact integration unqualified",
+            "recording_connection": "Native main/substream network capture to separate recorder",
+            "linux_support": null,
+            "proprietary_dependencies": "Vendor camera firmware; source availability and redistribution rights UNKNOWN",
+            "documentation_urls": [
+              "https://www.annke.com/products/c500p?variant=44179699237114"
+            ]
+          },
+          "fabrication": {
+            "complete_files": "UNKNOWN",
+            "scope": "complete_camera",
+            "available_files": [],
+            "missing_or_unverified": [
+              "Editable schematics and routed PCB layout matching the sold revision",
+              "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+              "Programming, provisioning and production-test instructions; component sourceability"
+            ],
+            "download_urls": [],
+            "commercial_reuse": "UNKNOWN",
+            "license_name": null,
+            "license_url": null,
+            "feasible": "UNKNOWN",
+            "evidence_note": "No complete camera production package or commercial reproduction rights established. Controller-only FAB-001 does not make camera fabrication mandatory.",
+            "evidence_urls": [],
+            "unit_cost_usd": null,
+            "quantity_at_cost": null,
+            "engineering_tooling_usd": null
+          },
+          "offer_terms": {
+            "manufacturer": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "amazon": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "alibaba": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "ebay": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "digikey": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "mouser": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            }
+          },
+          "checked_on": "2026-11-11"
+        },
+        "sources": [
+          {
+            "url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "SUPPORTED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Selected AN-I51HJ0102 white turret, variant 44179699237114: USD 44.99; available=true"
+          }
+        ],
+        "note": "Structured human-report summary from retained exact-configuration research and named resource checks. UNKNOWN is not a negative finding. No hardware acceptance, fabrication quote or price refresh."
+      }
+    },
+    "B0CZ3FWR3L": {
+      "exact_model": {
+        "value": "Anpviz IPC-D3653WD-SA",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "configuration": {
+        "value": "5MP PoE turret; single; Amazon B0CZ3FWR3L",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "buying_url": {
+        "value": "https://www.amazon.com/dp/B0CZ3FWR3L",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "seller": {
+        "value": "AnpvizDirect",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "price_usd": {
+        "value": "65.99",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "price_date": {
+        "value": "2026-11-08",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "specifications": {
+        "value": "Listing: 3072x1728 at 20 FPS; PoE; mic/speaker; IP67",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "sourcing_identity": {
+        "value": {
+          "full_product_name": "Anpviz IPC-D3653WD-SA 5MP PoE turret IP camera, single unit",
+          "manufacturer": "Anpviz",
+          "manufacturer_part_number": "IPC-D3653WD-SA",
+          "search_terms": "Anpviz IPC-D3653WD-SA"
+        },
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Search terms are navigation text; full name describes the existing exact candidate, not a new hardware qualification."
+      },
+      "vendor_manufacturer": {
+        "value": {
+          "search_url": null,
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.anpvizsecurity.com/",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3653WD-SA. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_amazon": {
+        "value": {
+          "search_url": "https://www.amazon.com/s?k=Anpviz+IPC-D3653WD-SA",
+          "product_url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+          "seller": "AnpvizDirect",
+          "seller_sku": "B0CZ3FWR3L",
+          "result": "EXACT",
+          "price_usd": "65.99",
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-08",
+          "note": "Dated exact-ASIN observation retained; no fresh price/stock verification. Candidate remains rejected on its existing camera cost gate."
+        },
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_alibaba": {
+        "value": {
+          "search_url": "https://www.alibaba.com/trade/search?SearchText=Anpviz+IPC-D3653WD-SA",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.alibaba.com/trade/search?SearchText=Anpviz+IPC-D3653WD-SA",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3653WD-SA. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_ebay": {
+        "value": {
+          "search_url": "https://www.ebay.com/sch/i.html?_nkw=Anpviz+IPC-D3653WD-SA",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.ebay.com/sch/i.html?_nkw=Anpviz+IPC-D3653WD-SA",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3653WD-SA. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_digikey": {
+        "value": {
+          "search_url": "https://www.digikey.com/en/products?keywords=Anpviz+IPC-D3653WD-SA",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.digikey.com/en/products?keywords=Anpviz+IPC-D3653WD-SA",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3653WD-SA. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_mouser": {
+        "value": {
+          "search_url": "https://www.mouser.com/c/?q=Anpviz+IPC-D3653WD-SA",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.mouser.com/c/?q=Anpviz+IPC-D3653WD-SA",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3653WD-SA. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "report_details": {
+        "value": {
+          "included": [
+            "Single camera; exact accessory contents UNKNOWN"
+          ],
+          "still_needed": [
+            "Qualified PoE power, ordinary cabling and installation accessories; complete costs UNKNOWN"
+          ],
+          "technical": {
+            "processor": null,
+            "ram": null,
+            "boot_storage": null,
+            "video_decode": null,
+            "inference": null,
+            "network": "PoE Ethernet according to retained listing; exact integration unqualified",
+            "recording_connection": "Native main/substream network capture to separate recorder",
+            "linux_support": null,
+            "proprietary_dependencies": "Vendor camera firmware; source availability and redistribution rights UNKNOWN",
+            "documentation_urls": []
+          },
+          "fabrication": {
+            "complete_files": "UNKNOWN",
+            "scope": "complete_camera",
+            "available_files": [],
+            "missing_or_unverified": [
+              "Editable schematics and routed PCB layout matching the sold revision",
+              "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+              "Programming, provisioning and production-test instructions; component sourceability"
+            ],
+            "download_urls": [],
+            "commercial_reuse": "UNKNOWN",
+            "license_name": null,
+            "license_url": null,
+            "feasible": "UNKNOWN",
+            "evidence_note": "No complete camera production package or commercial reproduction rights established. Controller-only FAB-001 does not make camera fabrication mandatory.",
+            "evidence_urls": [],
+            "unit_cost_usd": null,
+            "quantity_at_cost": null,
+            "engineering_tooling_usd": null
+          },
+          "offer_terms": {
+            "manufacturer": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "amazon": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "alibaba": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "ebay": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "digikey": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "mouser": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            }
+          },
+          "checked_on": "2026-11-11"
+        },
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0CZ3FWR3L, IPC-D3653WD-SA; USD65.99; AnpvizDirect; 3072x1728 at20fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Structured human-report summary from retained exact-configuration research and named resource checks. UNKNOWN is not a negative finding. No hardware acceptance, fabrication quote or price refresh."
+      }
+    },
+    "B0FB3YZ3Z3": {
+      "exact_model": {
+        "value": "Anpviz IPC-D3683WD-RB",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "configuration": {
+        "value": "8MP PoE turret; single; Amazon B0FB3YZ3Z3",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "buying_url": {
+        "value": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "seller": {
+        "value": "AnpvizDirect",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "price_usd": {
+        "value": "89.99",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "price_date": {
+        "value": "2026-11-08",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "specifications": {
+        "value": "Listing: 3840x2160 at 15 FPS; PoE; mic/speaker; IP67",
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Preserved November 8 signed-out listing observation; not fetched again during migration. Excerpt below summarizes that recorded observation, not a new verbatim page quotation."
+      },
+      "sourcing_identity": {
+        "value": {
+          "full_product_name": "Anpviz IPC-D3683WD-RB 8MP PoE turret IP camera, single unit",
+          "manufacturer": "Anpviz",
+          "manufacturer_part_number": "IPC-D3683WD-RB",
+          "search_terms": "Anpviz IPC-D3683WD-RB"
+        },
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Search terms are navigation text; full name describes the existing exact candidate, not a new hardware qualification."
+      },
+      "vendor_manufacturer": {
+        "value": {
+          "search_url": null,
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.anpvizsecurity.com/",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3683WD-RB. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_amazon": {
+        "value": {
+          "search_url": "https://www.amazon.com/s?k=Anpviz+IPC-D3683WD-RB",
+          "product_url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+          "seller": "AnpvizDirect",
+          "seller_sku": "B0FB3YZ3Z3",
+          "result": "EXACT",
+          "price_usd": "89.99",
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-08",
+          "note": "Dated exact-ASIN observation retained; no fresh price/stock verification. Candidate remains rejected on its existing camera cost gate."
+        },
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_alibaba": {
+        "value": {
+          "search_url": "https://www.alibaba.com/trade/search?SearchText=Anpviz+IPC-D3683WD-RB",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.alibaba.com/trade/search?SearchText=Anpviz+IPC-D3683WD-RB",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3683WD-RB. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_ebay": {
+        "value": {
+          "search_url": "https://www.ebay.com/sch/i.html?_nkw=Anpviz+IPC-D3683WD-RB",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.ebay.com/sch/i.html?_nkw=Anpviz+IPC-D3683WD-RB",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3683WD-RB. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_digikey": {
+        "value": {
+          "search_url": "https://www.digikey.com/en/products?keywords=Anpviz+IPC-D3683WD-RB",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.digikey.com/en/products?keywords=Anpviz+IPC-D3683WD-RB",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3683WD-RB. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "vendor_mouser": {
+        "value": {
+          "search_url": "https://www.mouser.com/c/?q=Anpviz+IPC-D3683WD-RB",
+          "product_url": null,
+          "seller": null,
+          "seller_sku": null,
+          "result": "NONE_FOUND",
+          "price_usd": null,
+          "stock": "UNKNOWN",
+          "checked_on": "2026-11-10",
+          "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock."
+        },
+        "sources": [
+          {
+            "url": "https://www.mouser.com/c/?q=Anpviz+IPC-D3683WD-RB",
+            "observed_on": "2026-11-10",
+            "basis": "search",
+            "support": "RECORDED",
+            "locator": "Bounded exact-model web-index search with vendor domain filter",
+            "excerpt": "Exact-model vendor-domain searches did not establish a product listing for Anpviz IPC-D3683WD-RB. Search coverage is bounded and is not a live inventory API."
+          }
+        ],
+        "note": "Vendor observation only; no purchase, authentication, checkout or hardware test."
+      },
+      "report_details": {
+        "value": {
+          "included": [
+            "Single camera; exact accessory contents UNKNOWN"
+          ],
+          "still_needed": [
+            "Qualified PoE power, ordinary cabling and installation accessories; complete costs UNKNOWN"
+          ],
+          "technical": {
+            "processor": null,
+            "ram": null,
+            "boot_storage": null,
+            "video_decode": null,
+            "inference": null,
+            "network": "PoE Ethernet according to retained listing; exact integration unqualified",
+            "recording_connection": "Native main/substream network capture to separate recorder",
+            "linux_support": null,
+            "proprietary_dependencies": "Vendor camera firmware; source availability and redistribution rights UNKNOWN",
+            "documentation_urls": []
+          },
+          "fabrication": {
+            "complete_files": "UNKNOWN",
+            "scope": "complete_camera",
+            "available_files": [],
+            "missing_or_unverified": [
+              "Editable schematics and routed PCB layout matching the sold revision",
+              "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+              "Programming, provisioning and production-test instructions; component sourceability"
+            ],
+            "download_urls": [],
+            "commercial_reuse": "UNKNOWN",
+            "license_name": null,
+            "license_url": null,
+            "feasible": "UNKNOWN",
+            "evidence_note": "No complete camera production package or commercial reproduction rights established. Controller-only FAB-001 does not make camera fabrication mandatory.",
+            "evidence_urls": [],
+            "unit_cost_usd": null,
+            "quantity_at_cost": null,
+            "engineering_tooling_usd": null
+          },
+          "offer_terms": {
+            "manufacturer": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "amazon": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "alibaba": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "ebay": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "digikey": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            },
+            "mouser": {
+              "quantity_moq": null,
+              "shipping_origin": null,
+              "warranty_returns": null,
+              "included_parts": null
+            }
+          },
+          "checked_on": "2026-11-11"
+        },
+        "sources": [
+          {
+            "url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "observed_on": "2026-11-08",
+            "basis": "listing",
+            "support": "RECORDED",
+            "locator": "Selected offer and configuration",
+            "excerpt": "Recorded exact ASIN B0FB3YZ3Z3, IPC-D3683WD-RB; USD89.99; AnpvizDirect; 3840x2160 at15fps; mic/speaker; IP67"
+          }
+        ],
+        "note": "Structured human-report summary from retained exact-configuration research and named resource checks. UNKNOWN is not a negative finding. No hardware acceptance, fabrication quote or price refresh."
+      }
+    }
+  },
+  "research": {
+    "bullet-report-schema-2026-11-11": {
+      "observed_on": "2026-11-11",
+      "scope": "Structured fabrication, package and technical summary for a single bullet tree per candidate.",
+      "findings": "Resource-page checks add direct schematic/mechanical links without establishing complete fabrication outputs or commercial rights. Prior prices/vendor checks retain their own dates.",
+      "requirements_changed": false,
+      "hardware_tested": false,
+      "purchase_approved": false
+    },
+    "vendor-links-and-searches-2026-11-10": {
+      "observed_on": "2026-11-10",
+      "scope": "Named vendor product links and reproducible search strings for every current candidate record, including retained rejected cameras.",
+      "method": "Bounded public web-index searches, primary product-page reads and earlier exact-offer evidence. No inventory API, account, cart, inquiry or order.",
+      "limits": "NONE_FOUND is scoped to these searches, never a global absence claim. Search links are generated navigation, not purchase evidence; incomplete/other variants cannot supply exact candidate prices.",
+      "requirements_changed": false,
+      "purchase_approved": false
+    },
+    "annke-c500p-offer-refresh-2026-11-09": {
+      "observed_on": "2026-11-09",
+      "source_url": "https://www.annke.com/products/c500p.js",
+      "buying_url": "https://www.annke.com/products/c500p?variant=44179699237114",
+      "configuration": "AN-I51HJ0102; Turret / White; variant 44179699237114",
+      "item_usd": "44.99",
+      "available": true,
+      "finding": "Exact Shopify variant reports price=4499 cents and available=true. Destination delivery, freight/tax and required PoE/accessories remain unpriced. This refresh does not qualify generic local talk, setup/reset, firmware security or physical performance, and does not authorize an order. Existing qualification claims retain their original observation dates."
+    },
+    "annke-c500p-c500-offers-2026-11-08": {
+      "observed_on": "2026-11-08",
+      "source_urls": [
+        "https://www.annke.com/products/c500p.js",
+        "https://www.annke.com/products/c500.js",
+        "https://cdn.shopify.com/s/files/1/0110/6385/3156/files/c500p2026.pdf"
+      ],
+      "findings": [
+        "C500P AN-I51HJ0102, white turret single, variant44179699237114: price4499 cents; available=true.",
+        "C500 AN-I51FW0102, turret single, variant39802105397415: price3999 cents; available=true. Current title advertises3072x1728/20fps and microphone, not a generic local talk interface. Do not borrow an older C500 revision pixel specification.",
+        "C500P I51HJ datasheet lists H.264 on main/sub, mic/speaker, RTSP, Open Network Video Interface19.12, IP67 and up-to30mIR. Concurrent operation and local lifecycle/security remain untested. WDR is not listed in this model table."
+      ],
+      "hardware_tested": false,
+      "purchase_approved": false,
+      "documentary_gate_exception_approved": false
+    }
+  }
+}

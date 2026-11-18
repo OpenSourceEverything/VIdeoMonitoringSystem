@@ -1,0 +1,32 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Frigate reconciliation must run through the appliance service." >&2
+    exit 2
+fi
+
+exec 9>/run/lock/vms-frigate-reconcile.lock
+flock 9
+
+if ! /usr/local/libexec/vms-recording-recover; then
+    systemctl stop vms-frigate.service
+    exit 1
+fi
+
+set +e
+/usr/local/libexec/vms-frigate-render --signal-change >/dev/null
+result=$?
+set -e
+case "$result" in
+    0)
+        # A clean exit or a removed dependency need not trigger Restart=on-failure.
+        # Starting an already-running service is a no-op, not a recording gap.
+        systemctl start vms-frigate.service
+        ;;
+    10)
+        systemctl restart vms-frigate.service
+        systemctl restart vms-recorder.service
+        ;;
+    *) exit "$result" ;;
+esac

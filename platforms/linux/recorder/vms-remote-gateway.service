@@ -1,0 +1,26 @@
+[Unit]
+Description=Video Monitoring System owner-gateway tunnel
+Wants=network-online.target vms-recorder.service
+After=network-online.target vms-recorder.service
+
+[Service]
+Type=simple
+User=vms
+Group=vms
+WorkingDirectory=/opt/video-monitoring-system
+Environment=VMS_RECORDER_DEVICE_CONFIG=/etc/vms/device.json
+ExecStart=/opt/video-monitoring-system/bin/vms --data-dir /var/lib/video-monitoring-system remote tunnel
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadOnlyPaths=/var/lib/video-monitoring-system
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

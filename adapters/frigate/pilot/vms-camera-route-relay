@@ -1,0 +1,29 @@
+#!/bin/sh
+set -eu
+
+data_directory=/var/lib/video-monitoring-system
+relay_environment=/etc/vms/frigate-route-relay
+
+if [ "$(id -un)" != vms ]; then
+    echo "Camera route relay must run through the appliance service." >&2
+    exit 2
+fi
+
+if [ ! -f "$relay_environment" ] || [ -L "$relay_environment" ] || \
+    [ "$(stat -c %u "$relay_environment")" != 0 ] || \
+    [ "$(stat -c %a "$relay_environment")" != 440 ]; then
+    echo "Camera route relay configuration is unsafe." >&2
+    exit 2
+fi
+# Root-owned appliance routing values only; this file never contains secrets.
+# shellcheck disable=SC1090
+. "$relay_environment"
+
+cd /opt/video-monitoring-system
+exec env VMS_RECORDER_DEVICE_CONFIG=/etc/vms/device.json \
+    /opt/video-monitoring-system/bin/vms \
+    --data-dir "$data_directory" \
+    recorder route-relay \
+    --bind "$VMS_CAMERA_RELAY_BIND" \
+    --port 9081 \
+    --allowed-client-network "$VMS_CAMERA_RELAY_CLIENT_NETWORK"

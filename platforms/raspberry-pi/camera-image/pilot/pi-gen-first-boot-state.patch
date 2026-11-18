@@ -1,0 +1,31 @@
+diff --git a/export-image/05-finalise/01-run.sh b/export-image/05-finalise/01-run.sh
+--- a/export-image/05-finalise/01-run.sh
++++ b/export-image/05-finalise/01-run.sh
+@@ -55,5 +55,24 @@
++# Package installation can run cloud-init inside the build root and leave its
++# NoCloud instance cache and module semaphores behind.  A released image is a
++# generic machine, so no build-time cloud-init or machine identity may cross
++# the image boundary.
++rm -rf "${ROOTFS_DIR}/var/lib/cloud"
++install -d -m 0755 "${ROOTFS_DIR}/var/lib/cloud"
+ rm -f "${ROOTFS_DIR}/var/lib/dbus/machine-id"
+-
+-echo "uninitialized" > "${ROOTFS_DIR}/etc/machine-id"
++printf 'uninitialized\n' > "${ROOTFS_DIR}/etc/machine-id"
++
++if find "${ROOTFS_DIR}/var/lib/cloud" -mindepth 1 -print -quit | grep -q .; then
++	echo "Build-time cloud-init state remains in the exported image" >&2
++	exit 1
++fi
++if [ -e "${ROOTFS_DIR}/var/lib/dbus/machine-id" ] || \
++   [ -L "${ROOTFS_DIR}/var/lib/dbus/machine-id" ]; then
++	echo "Build-time D-Bus machine-id remains in the exported image" >&2
++	exit 1
++fi
++if [ "$(cat "${ROOTFS_DIR}/etc/machine-id")" != "uninitialized" ]; then
++	echo "Machine-id was not reset before image export" >&2
++	exit 1
++fi
+-
++
+ ln -nsf /proc/mounts "${ROOTFS_DIR}/etc/mtab"

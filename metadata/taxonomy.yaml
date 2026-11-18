@@ -1,0 +1,28 @@
+product:
+  managed_by: Recorder
+  devices:
+    - Recorder
+    - Camera
+  information_flow:
+    - Camera
+    - Recording
+    - DetectionEvent
+    - Alert
+
+relationships:
+  Recorder:
+    manages:
+      - Camera
+      - Recording
+      - DetectionEvent
+      - Alert
+  Camera:
+    produces:
+      - Recording
+  Recording:
+    may_produce:
+      - DetectionEvent
+  DetectionEvent:
+    may_produce:
+      - Alert
+

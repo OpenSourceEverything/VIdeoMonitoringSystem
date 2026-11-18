@@ -1,0 +1,1105 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-11",
+  "requirements_sha256": "72eed71768631321487b4e5a07f0c3cf8678288d36023748cb3993690e0cd9cd",
+  "candidates": [
+    {
+      "id": "annke-c500p-i51hj",
+      "role": "camera",
+      "exact_model": "ANNKE C500P I51HJ",
+      "configuration": "AN-I51HJ0102; white turret; single camera",
+      "buying_url": "https://www.annke.com/products/c500p?variant=44179699237114",
+      "seller": "ANNKE official",
+      "price_usd": "44.99",
+      "price_date": "2026-11-08",
+      "specifications": "Published: 3072x1728 at 20 FPS; PoE; mic/speaker; RTSP; H.264 main/sub; IP67; 30m IR",
+      "local_operation": "UNKNOWN",
+      "acceleration": {
+        "video_decode": "NOT_APPLICABLE",
+        "inference": "NOT_APPLICABLE"
+      },
+      "cost": {
+        "intended_selling_price_usd": "100.00",
+        "components": [
+          {
+            "id": "item",
+            "amount_usd": "44.99",
+            "evidence": [
+              "price_usd"
+            ]
+          },
+          {
+            "id": "required_power_mounts_and_cables",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "inbound_freight",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "duty",
+            "amount_usd": null,
+            "evidence": []
+          }
+        ],
+        "known_subtotal_usd": "44.99",
+        "total_cost_usd": null
+      },
+      "gates": {
+        "exact_configuration": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact shipped revision and firmware unqualified"
+        },
+        "offline_lifecycle": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "App-free activation, reset and updates unproved"
+        },
+        "identity_and_commissioning": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Permanent identity and secure commissioning unproved"
+        },
+        "signed_updates_and_recovery": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Signed updates, rollback and revocation unproved"
+        },
+        "supply_warranty_and_licensing": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Repeatable supply, support and redistribution unqualified"
+        },
+        "production_cost": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Power/accessories, freight and duty remain UNKNOWN"
+        },
+        "complete_business_cost": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        "system_acceptance": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Full physical system acceptance NOT RUN"
+        },
+        "native_video_and_dual_streams": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Concurrent native H.264 streams and sustained FPS untested"
+        },
+        "generic_local_talk": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Generic app-free local two-way talk unproved"
+        },
+        "outdoor_image_quality": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Day/night moving-face detail and backlight performance untested"
+        },
+        "power_and_network": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Power, home-LAN recovery and environmental operation untested"
+        },
+        "enrollment_reset_and_replacement": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "OSE enrollment, secure reset and replacement untested"
+        }
+      },
+      "status": "PARTIAL",
+      "blockers": [
+        {
+          "gate": "exact_configuration",
+          "message": "Exact shipped revision and firmware unqualified"
+        },
+        {
+          "gate": "offline_lifecycle",
+          "message": "App-free activation, reset and updates unproved"
+        },
+        {
+          "gate": "identity_and_commissioning",
+          "message": "Permanent identity and secure commissioning unproved"
+        },
+        {
+          "gate": "signed_updates_and_recovery",
+          "message": "Signed updates, rollback and revocation unproved"
+        },
+        {
+          "gate": "supply_warranty_and_licensing",
+          "message": "Repeatable supply, support and redistribution unqualified"
+        },
+        {
+          "gate": "production_cost",
+          "message": "Power/accessories, freight and duty remain UNKNOWN"
+        },
+        {
+          "gate": "complete_business_cost",
+          "message": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        {
+          "gate": "system_acceptance",
+          "message": "Full physical system acceptance NOT RUN"
+        },
+        {
+          "gate": "native_video_and_dual_streams",
+          "message": "Concurrent native H.264 streams and sustained FPS untested"
+        },
+        {
+          "gate": "generic_local_talk",
+          "message": "Generic app-free local two-way talk unproved"
+        },
+        {
+          "gate": "outdoor_image_quality",
+          "message": "Day/night moving-face detail and backlight performance untested"
+        },
+        {
+          "gate": "power_and_network",
+          "message": "Power, home-LAN recovery and environmental operation untested"
+        },
+        {
+          "gate": "enrollment_reset_and_replacement",
+          "message": "OSE enrollment, secure reset and replacement untested"
+        }
+      ],
+      "evidence": {
+        "exact_model": [
+          "exact_model"
+        ],
+        "configuration": [
+          "configuration"
+        ],
+        "buying_url": [
+          "buying_url"
+        ],
+        "seller": [
+          "seller"
+        ],
+        "price_usd": [
+          "price_usd"
+        ],
+        "price_date": [
+          "price_date"
+        ],
+        "specifications": [
+          "specifications"
+        ]
+      },
+      "sourcing": {
+        "full_product_name": "ANNKE C500P I51HJ 5MP PoE turret IP camera, single white AN-I51HJ0102",
+        "manufacturer": "ANNKE",
+        "manufacturer_part_number": "AN-I51HJ0102",
+        "search_terms": "ANNKE C500P I51HJ",
+        "vendors": {
+          "manufacturer": {
+            "search_url": null,
+            "product_url": "https://www.annke.com/products/c500p?variant=44179699237114",
+            "seller": "ANNKE official",
+            "seller_sku": "AN-I51HJ0102",
+            "result": "EXACT",
+            "price_usd": "44.99",
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-08",
+            "note": "Existing exact-SKU source retained; tax, delivery and complete product acceptance are separate.",
+            "evidence": [
+              "vendor_manufacturer"
+            ]
+          },
+          "amazon": {
+            "search_url": "https://www.amazon.com/s?k=ANNKE+C500P+I51HJ",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_amazon"
+            ]
+          },
+          "alibaba": {
+            "search_url": "https://www.alibaba.com/trade/search?SearchText=ANNKE+C500P+I51HJ",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_alibaba"
+            ]
+          },
+          "ebay": {
+            "search_url": "https://www.ebay.com/sch/i.html?_nkw=ANNKE+C500P+I51HJ",
+            "product_url": "https://www.ebay.com/itm/146768924428",
+            "seller": "annketech",
+            "seller_sku": "146768924428",
+            "result": "UNVERIFIED",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "C500P listing found, but exact I51HJ/AN-I51HJ0102 identity not established from page text; do not substitute its advertised price.",
+            "evidence": [
+              "vendor_ebay"
+            ]
+          },
+          "digikey": {
+            "search_url": "https://www.digikey.com/en/products?keywords=ANNKE+C500P+I51HJ",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_digikey"
+            ]
+          },
+          "mouser": {
+            "search_url": "https://www.mouser.com/c/?q=ANNKE+C500P+I51HJ",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_mouser"
+            ]
+          }
+        }
+      },
+      "report_details": {
+        "included": [
+          "Single camera; exact accessory contents UNKNOWN"
+        ],
+        "still_needed": [
+          "Qualified PoE power, ordinary cabling and installation accessories; complete costs UNKNOWN"
+        ],
+        "technical": {
+          "processor": null,
+          "ram": null,
+          "boot_storage": null,
+          "video_decode": null,
+          "inference": null,
+          "network": "PoE Ethernet according to retained listing; exact integration unqualified",
+          "recording_connection": "Native main/substream network capture to separate recorder",
+          "linux_support": null,
+          "proprietary_dependencies": "Vendor camera firmware; source availability and redistribution rights UNKNOWN",
+          "documentation_urls": [
+            "https://www.annke.com/products/c500p?variant=44179699237114"
+          ]
+        },
+        "fabrication": {
+          "complete_files": "UNKNOWN",
+          "scope": "complete_camera",
+          "available_files": [],
+          "missing_or_unverified": [
+            "Editable schematics and routed PCB layout matching the sold revision",
+            "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+            "Programming, provisioning and production-test instructions; component sourceability"
+          ],
+          "download_urls": [],
+          "commercial_reuse": "UNKNOWN",
+          "license_name": null,
+          "license_url": null,
+          "feasible": "UNKNOWN",
+          "evidence_note": "No complete camera production package or commercial reproduction rights established. Controller-only FAB-001 does not make camera fabrication mandatory.",
+          "evidence_urls": [],
+          "unit_cost_usd": null,
+          "quantity_at_cost": null,
+          "engineering_tooling_usd": null
+        },
+        "offer_terms": {
+          "manufacturer": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "amazon": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "alibaba": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "ebay": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "digikey": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "mouser": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          }
+        },
+        "checked_on": "2026-11-11",
+        "evidence": [
+          "report_details"
+        ]
+      }
+    },
+    {
+      "id": "B0CZ3FWR3L",
+      "role": "camera",
+      "exact_model": "Anpviz IPC-D3653WD-SA",
+      "configuration": "5MP PoE turret; single; Amazon B0CZ3FWR3L",
+      "buying_url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+      "seller": "AnpvizDirect",
+      "price_usd": "65.99",
+      "price_date": "2026-11-08",
+      "specifications": "Listing: 3072x1728 at 20 FPS; PoE; mic/speaker; IP67",
+      "local_operation": "UNKNOWN",
+      "acceleration": {
+        "video_decode": "NOT_APPLICABLE",
+        "inference": "NOT_APPLICABLE"
+      },
+      "cost": {
+        "intended_selling_price_usd": "100.00",
+        "components": [
+          {
+            "id": "item",
+            "amount_usd": "65.99",
+            "evidence": [
+              "price_usd"
+            ]
+          },
+          {
+            "id": "required_power_mounts_and_cables",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "inbound_freight",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "duty",
+            "amount_usd": null,
+            "evidence": []
+          }
+        ],
+        "known_subtotal_usd": "65.99",
+        "total_cost_usd": null
+      },
+      "gates": {
+        "exact_configuration": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact shipped revision and firmware unqualified"
+        },
+        "offline_lifecycle": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "App-free activation, reset and updates unproved"
+        },
+        "identity_and_commissioning": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Permanent identity and secure commissioning unproved"
+        },
+        "signed_updates_and_recovery": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Signed updates, rollback and revocation unproved"
+        },
+        "supply_warranty_and_licensing": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Repeatable supply, support and redistribution unqualified"
+        },
+        "production_cost": {
+          "status": "FAIL",
+          "evidence": [
+            "price_usd"
+          ],
+          "reason": "Item alone exceeds $50 production procurement ceiling"
+        },
+        "complete_business_cost": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        "system_acceptance": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Full physical system acceptance NOT RUN"
+        },
+        "native_video_and_dual_streams": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Concurrent native H.264 streams and sustained FPS untested"
+        },
+        "generic_local_talk": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Generic app-free local two-way talk unproved"
+        },
+        "outdoor_image_quality": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Day/night moving-face detail and backlight performance untested"
+        },
+        "power_and_network": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Power, home-LAN recovery and environmental operation untested"
+        },
+        "enrollment_reset_and_replacement": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "OSE enrollment, secure reset and replacement untested"
+        }
+      },
+      "status": "REJECTED",
+      "blockers": [
+        {
+          "gate": "exact_configuration",
+          "message": "Exact shipped revision and firmware unqualified"
+        },
+        {
+          "gate": "offline_lifecycle",
+          "message": "App-free activation, reset and updates unproved"
+        },
+        {
+          "gate": "identity_and_commissioning",
+          "message": "Permanent identity and secure commissioning unproved"
+        },
+        {
+          "gate": "signed_updates_and_recovery",
+          "message": "Signed updates, rollback and revocation unproved"
+        },
+        {
+          "gate": "supply_warranty_and_licensing",
+          "message": "Repeatable supply, support and redistribution unqualified"
+        },
+        {
+          "gate": "production_cost",
+          "message": "Item alone exceeds $50 production procurement ceiling"
+        },
+        {
+          "gate": "complete_business_cost",
+          "message": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        {
+          "gate": "system_acceptance",
+          "message": "Full physical system acceptance NOT RUN"
+        },
+        {
+          "gate": "native_video_and_dual_streams",
+          "message": "Concurrent native H.264 streams and sustained FPS untested"
+        },
+        {
+          "gate": "generic_local_talk",
+          "message": "Generic app-free local two-way talk unproved"
+        },
+        {
+          "gate": "outdoor_image_quality",
+          "message": "Day/night moving-face detail and backlight performance untested"
+        },
+        {
+          "gate": "power_and_network",
+          "message": "Power, home-LAN recovery and environmental operation untested"
+        },
+        {
+          "gate": "enrollment_reset_and_replacement",
+          "message": "OSE enrollment, secure reset and replacement untested"
+        }
+      ],
+      "evidence": {
+        "exact_model": [
+          "exact_model"
+        ],
+        "configuration": [
+          "configuration"
+        ],
+        "buying_url": [
+          "buying_url"
+        ],
+        "seller": [
+          "seller"
+        ],
+        "price_usd": [
+          "price_usd"
+        ],
+        "price_date": [
+          "price_date"
+        ],
+        "specifications": [
+          "specifications"
+        ]
+      },
+      "sourcing": {
+        "full_product_name": "Anpviz IPC-D3653WD-SA 5MP PoE turret IP camera, single unit",
+        "manufacturer": "Anpviz",
+        "manufacturer_part_number": "IPC-D3653WD-SA",
+        "search_terms": "Anpviz IPC-D3653WD-SA",
+        "vendors": {
+          "manufacturer": {
+            "search_url": null,
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_manufacturer"
+            ]
+          },
+          "amazon": {
+            "search_url": "https://www.amazon.com/s?k=Anpviz+IPC-D3653WD-SA",
+            "product_url": "https://www.amazon.com/dp/B0CZ3FWR3L",
+            "seller": "AnpvizDirect",
+            "seller_sku": "B0CZ3FWR3L",
+            "result": "EXACT",
+            "price_usd": "65.99",
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-08",
+            "note": "Dated exact-ASIN observation retained; no fresh price/stock verification. Candidate remains rejected on its existing camera cost gate.",
+            "evidence": [
+              "vendor_amazon"
+            ]
+          },
+          "alibaba": {
+            "search_url": "https://www.alibaba.com/trade/search?SearchText=Anpviz+IPC-D3653WD-SA",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_alibaba"
+            ]
+          },
+          "ebay": {
+            "search_url": "https://www.ebay.com/sch/i.html?_nkw=Anpviz+IPC-D3653WD-SA",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_ebay"
+            ]
+          },
+          "digikey": {
+            "search_url": "https://www.digikey.com/en/products?keywords=Anpviz+IPC-D3653WD-SA",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_digikey"
+            ]
+          },
+          "mouser": {
+            "search_url": "https://www.mouser.com/c/?q=Anpviz+IPC-D3653WD-SA",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_mouser"
+            ]
+          }
+        }
+      },
+      "report_details": {
+        "included": [
+          "Single camera; exact accessory contents UNKNOWN"
+        ],
+        "still_needed": [
+          "Qualified PoE power, ordinary cabling and installation accessories; complete costs UNKNOWN"
+        ],
+        "technical": {
+          "processor": null,
+          "ram": null,
+          "boot_storage": null,
+          "video_decode": null,
+          "inference": null,
+          "network": "PoE Ethernet according to retained listing; exact integration unqualified",
+          "recording_connection": "Native main/substream network capture to separate recorder",
+          "linux_support": null,
+          "proprietary_dependencies": "Vendor camera firmware; source availability and redistribution rights UNKNOWN",
+          "documentation_urls": []
+        },
+        "fabrication": {
+          "complete_files": "UNKNOWN",
+          "scope": "complete_camera",
+          "available_files": [],
+          "missing_or_unverified": [
+            "Editable schematics and routed PCB layout matching the sold revision",
+            "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+            "Programming, provisioning and production-test instructions; component sourceability"
+          ],
+          "download_urls": [],
+          "commercial_reuse": "UNKNOWN",
+          "license_name": null,
+          "license_url": null,
+          "feasible": "UNKNOWN",
+          "evidence_note": "No complete camera production package or commercial reproduction rights established. Controller-only FAB-001 does not make camera fabrication mandatory.",
+          "evidence_urls": [],
+          "unit_cost_usd": null,
+          "quantity_at_cost": null,
+          "engineering_tooling_usd": null
+        },
+        "offer_terms": {
+          "manufacturer": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "amazon": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "alibaba": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "ebay": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "digikey": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "mouser": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          }
+        },
+        "checked_on": "2026-11-11",
+        "evidence": [
+          "report_details"
+        ]
+      }
+    },
+    {
+      "id": "B0FB3YZ3Z3",
+      "role": "camera",
+      "exact_model": "Anpviz IPC-D3683WD-RB",
+      "configuration": "8MP PoE turret; single; Amazon B0FB3YZ3Z3",
+      "buying_url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+      "seller": "AnpvizDirect",
+      "price_usd": "89.99",
+      "price_date": "2026-11-08",
+      "specifications": "Listing: 3840x2160 at 15 FPS; PoE; mic/speaker; IP67",
+      "local_operation": "UNKNOWN",
+      "acceleration": {
+        "video_decode": "NOT_APPLICABLE",
+        "inference": "NOT_APPLICABLE"
+      },
+      "cost": {
+        "intended_selling_price_usd": "100.00",
+        "components": [
+          {
+            "id": "item",
+            "amount_usd": "89.99",
+            "evidence": [
+              "price_usd"
+            ]
+          },
+          {
+            "id": "required_power_mounts_and_cables",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "inbound_freight",
+            "amount_usd": null,
+            "evidence": []
+          },
+          {
+            "id": "duty",
+            "amount_usd": null,
+            "evidence": []
+          }
+        ],
+        "known_subtotal_usd": "89.99",
+        "total_cost_usd": null
+      },
+      "gates": {
+        "exact_configuration": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Exact shipped revision and firmware unqualified"
+        },
+        "offline_lifecycle": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "App-free activation, reset and updates unproved"
+        },
+        "identity_and_commissioning": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Permanent identity and secure commissioning unproved"
+        },
+        "signed_updates_and_recovery": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Signed updates, rollback and revocation unproved"
+        },
+        "supply_warranty_and_licensing": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Repeatable supply, support and redistribution unqualified"
+        },
+        "production_cost": {
+          "status": "FAIL",
+          "evidence": [
+            "price_usd"
+          ],
+          "reason": "Item alone exceeds $50 production procurement ceiling"
+        },
+        "complete_business_cost": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        "system_acceptance": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Full physical system acceptance NOT RUN"
+        },
+        "native_video_and_dual_streams": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Concurrent native H.264 streams and sustained FPS untested"
+        },
+        "generic_local_talk": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Generic app-free local two-way talk unproved"
+        },
+        "outdoor_image_quality": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Day/night moving-face detail and backlight performance untested"
+        },
+        "power_and_network": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "Power, home-LAN recovery and environmental operation untested"
+        },
+        "enrollment_reset_and_replacement": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "reason": "OSE enrollment, secure reset and replacement untested"
+        }
+      },
+      "status": "REJECTED",
+      "blockers": [
+        {
+          "gate": "exact_configuration",
+          "message": "Exact shipped revision and firmware unqualified"
+        },
+        {
+          "gate": "offline_lifecycle",
+          "message": "App-free activation, reset and updates unproved"
+        },
+        {
+          "gate": "identity_and_commissioning",
+          "message": "Permanent identity and secure commissioning unproved"
+        },
+        {
+          "gate": "signed_updates_and_recovery",
+          "message": "Signed updates, rollback and revocation unproved"
+        },
+        {
+          "gate": "supply_warranty_and_licensing",
+          "message": "Repeatable supply, support and redistribution unqualified"
+        },
+        {
+          "gate": "production_cost",
+          "message": "Item alone exceeds $50 production procurement ceiling"
+        },
+        {
+          "gate": "complete_business_cost",
+          "message": "Assembly, fulfillment, warranty and support costs unpriced"
+        },
+        {
+          "gate": "system_acceptance",
+          "message": "Full physical system acceptance NOT RUN"
+        },
+        {
+          "gate": "native_video_and_dual_streams",
+          "message": "Concurrent native H.264 streams and sustained FPS untested"
+        },
+        {
+          "gate": "generic_local_talk",
+          "message": "Generic app-free local two-way talk unproved"
+        },
+        {
+          "gate": "outdoor_image_quality",
+          "message": "Day/night moving-face detail and backlight performance untested"
+        },
+        {
+          "gate": "power_and_network",
+          "message": "Power, home-LAN recovery and environmental operation untested"
+        },
+        {
+          "gate": "enrollment_reset_and_replacement",
+          "message": "OSE enrollment, secure reset and replacement untested"
+        }
+      ],
+      "evidence": {
+        "exact_model": [
+          "exact_model"
+        ],
+        "configuration": [
+          "configuration"
+        ],
+        "buying_url": [
+          "buying_url"
+        ],
+        "seller": [
+          "seller"
+        ],
+        "price_usd": [
+          "price_usd"
+        ],
+        "price_date": [
+          "price_date"
+        ],
+        "specifications": [
+          "specifications"
+        ]
+      },
+      "sourcing": {
+        "full_product_name": "Anpviz IPC-D3683WD-RB 8MP PoE turret IP camera, single unit",
+        "manufacturer": "Anpviz",
+        "manufacturer_part_number": "IPC-D3683WD-RB",
+        "search_terms": "Anpviz IPC-D3683WD-RB",
+        "vendors": {
+          "manufacturer": {
+            "search_url": null,
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_manufacturer"
+            ]
+          },
+          "amazon": {
+            "search_url": "https://www.amazon.com/s?k=Anpviz+IPC-D3683WD-RB",
+            "product_url": "https://www.amazon.com/dp/B0FB3YZ3Z3",
+            "seller": "AnpvizDirect",
+            "seller_sku": "B0FB3YZ3Z3",
+            "result": "EXACT",
+            "price_usd": "89.99",
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-08",
+            "note": "Dated exact-ASIN observation retained; no fresh price/stock verification. Candidate remains rejected on its existing camera cost gate.",
+            "evidence": [
+              "vendor_amazon"
+            ]
+          },
+          "alibaba": {
+            "search_url": "https://www.alibaba.com/trade/search?SearchText=Anpviz+IPC-D3683WD-RB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_alibaba"
+            ]
+          },
+          "ebay": {
+            "search_url": "https://www.ebay.com/sch/i.html?_nkw=Anpviz+IPC-D3683WD-RB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_ebay"
+            ]
+          },
+          "digikey": {
+            "search_url": "https://www.digikey.com/en/products?keywords=Anpviz+IPC-D3683WD-RB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_digikey"
+            ]
+          },
+          "mouser": {
+            "search_url": "https://www.mouser.com/c/?q=Anpviz+IPC-D3683WD-RB",
+            "product_url": null,
+            "seller": null,
+            "seller_sku": null,
+            "result": "NONE_FOUND",
+            "price_usd": null,
+            "stock": "UNKNOWN",
+            "checked_on": "2026-11-10",
+            "note": "No verified exact listing found in the bounded public web-index search; not proof of no vendor stock.",
+            "evidence": [
+              "vendor_mouser"
+            ]
+          }
+        }
+      },
+      "report_details": {
+        "included": [
+          "Single camera; exact accessory contents UNKNOWN"
+        ],
+        "still_needed": [
+          "Qualified PoE power, ordinary cabling and installation accessories; complete costs UNKNOWN"
+        ],
+        "technical": {
+          "processor": null,
+          "ram": null,
+          "boot_storage": null,
+          "video_decode": null,
+          "inference": null,
+          "network": "PoE Ethernet according to retained listing; exact integration unqualified",
+          "recording_connection": "Native main/substream network capture to separate recorder",
+          "linux_support": null,
+          "proprietary_dependencies": "Vendor camera firmware; source availability and redistribution rights UNKNOWN",
+          "documentation_urls": []
+        },
+        "fabrication": {
+          "complete_files": "UNKNOWN",
+          "scope": "complete_camera",
+          "available_files": [],
+          "missing_or_unverified": [
+            "Editable schematics and routed PCB layout matching the sold revision",
+            "Production BOM, stackup/impedance rules, fabrication/drill and placement/assembly files",
+            "Programming, provisioning and production-test instructions; component sourceability"
+          ],
+          "download_urls": [],
+          "commercial_reuse": "UNKNOWN",
+          "license_name": null,
+          "license_url": null,
+          "feasible": "UNKNOWN",
+          "evidence_note": "No complete camera production package or commercial reproduction rights established. Controller-only FAB-001 does not make camera fabrication mandatory.",
+          "evidence_urls": [],
+          "unit_cost_usd": null,
+          "quantity_at_cost": null,
+          "engineering_tooling_usd": null
+        },
+        "offer_terms": {
+          "manufacturer": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "amazon": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "alibaba": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "ebay": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "digikey": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          },
+          "mouser": {
+            "quantity_moq": null,
+            "shipping_origin": null,
+            "warranty_returns": null,
+            "included_parts": null
+          }
+        },
+        "checked_on": "2026-11-11",
+        "evidence": [
+          "report_details"
+        ]
+      }
+    }
+  ]
+}

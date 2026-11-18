@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+repository=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+cd "$repository"
+PYTHONPATH="$repository/src${PYTHONPATH:+:$PYTHONPATH}" \
+    exec python3 -m video_monitoring_system.sourcing_watch "$@"

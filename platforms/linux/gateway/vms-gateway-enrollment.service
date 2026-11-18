@@ -1,0 +1,25 @@
+[Unit]
+Description=Video Monitoring System one-time gateway enrollment
+Wants=network-online.target
+After=network-online.target ssh.service sshd.service
+
+[Service]
+Type=simple
+User=vms-gateway
+Group=vms-gateway
+WorkingDirectory=/opt/vms-gateway
+ExecStart=/opt/vms-gateway/bin/vms-gateway --state-dir /var/lib/vms-gateway serve --port 19080
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/vms-gateway
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

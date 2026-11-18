@@ -1,0 +1,7 @@
+#!/opt/video-monitoring-system/bin/python
+"""Read one allowlisted journal tail for the authenticated VMS portal."""
+
+from video_monitoring_system.device.journal_reader import recorder_helper_main
+
+
+raise SystemExit(recorder_helper_main())

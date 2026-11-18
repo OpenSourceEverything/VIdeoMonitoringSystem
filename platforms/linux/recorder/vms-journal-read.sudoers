@@ -1,0 +1,2 @@
+# Permit the portal to read only the bounded, allowlisted journal helper.
+vms ALL=(root) NOPASSWD: /usr/local/libexec/vms-journal-read ""

@@ -1,0 +1,6 @@
+Cmnd_Alias VMS_TAILSCALE = /usr/bin/tailscale status --json, \
+    /usr/bin/tailscale login --hostname\=osecameras --qr --timeout\=30m, \
+    /usr/bin/tailscale funnel reset, \
+    /usr/bin/tailscale serve --bg --yes http\://127.0.0.1\:80, \
+    /usr/bin/tailscale serve reset
+vms ALL=(root) NOPASSWD: VMS_TAILSCALE

@@ -1,0 +1,138 @@
+#!/bin/sh
+set -eu
+
+# This is a disposable radio/phone qualification probe, not product onboarding.
+# It deliberately keeps received network material in /run and destroys it on exit.
+
+umask 077
+marker=/boot/firmware/vms-dpp-reference-probe
+state=/run/vms-dpp-reference-probe
+control="$state/control"
+config="$state/wpa_supplicant.conf"
+pidfile="$state/wpa_supplicant.pid"
+interface=wlan0
+frequency=2437
+channel=81/6
+network_manager_was_active=no
+
+fail() {
+    printf 'OSE_DPP_PROBE_FAILED=%s\n' "$1" > /dev/console
+    printf 'OSE_DPP_PROBE_FAILED=%s\n' "$1" >&2
+    exit 1
+}
+
+cleanup() {
+    code=$?
+    trap - EXIT INT TERM HUP
+    if [ -S "$control/$interface" ]; then
+        wpa_cli -p "$control" -i "$interface" dpp_stop_listen >/dev/null 2>&1 || true
+        wpa_cli -p "$control" -i "$interface" terminate >/dev/null 2>&1 || true
+    fi
+    if [ -s "$pidfile" ]; then
+        process=$(cat "$pidfile")
+        case "$process" in
+            *[!0-9]*|'') ;;
+            *) kill "$process" >/dev/null 2>&1 || true ;;
+        esac
+    fi
+    rm -f "$config" "$pidfile"
+    rmdir "$control" "$state" >/dev/null 2>&1 || true
+    if [ "$network_manager_was_active" = yes ]; then
+        systemctl start NetworkManager.service >/dev/null 2>&1 || true
+    fi
+    exit "$code"
+}
+trap cleanup EXIT INT TERM HUP
+
+[ "$(id -u)" -eq 0 ] || fail must_run_as_root
+[ -f "$marker" ] && [ ! -L "$marker" ] || fail marker_missing
+[ ! -e /etc/vms/device.json ] && [ ! -L /etc/vms/device.json ] || \
+    fail refuses_personalized_camera
+
+country=$(tr -d '\r\n' < "$marker")
+case "$country" in
+    [A-Z][A-Z]) ;;
+    *) fail invalid_country_marker ;;
+esac
+
+command -v iw >/dev/null || fail iw_missing
+command -v ip >/dev/null || fail ip_missing
+command -v rfkill >/dev/null || fail rfkill_missing
+command -v wpa_cli >/dev/null || fail wpa_cli_missing
+command -v wpa_supplicant >/dev/null || fail wpa_supplicant_missing
+[ -d "/sys/class/net/$interface" ] || fail wifi_interface_missing
+
+if systemctl is-active --quiet NetworkManager.service; then
+    network_manager_was_active=yes
+    systemctl stop NetworkManager.service
+fi
+systemctl stop wpa_supplicant.service >/dev/null 2>&1 || true
+
+install -d -o root -g root -m 0700 "$state" "$control"
+cat > "$config" <<EOF
+ctrl_interface=DIR=$control
+ctrl_interface_group=0
+update_config=1
+pmf=2
+dpp_config_processing=2
+EOF
+chmod 0600 "$config"
+
+rfkill unblock wifi
+iw reg set "$country"
+ip link set "$interface" up
+wpa_supplicant -B -q -P "$pidfile" -D nl80211 -i "$interface" -c "$config"
+
+remaining=20
+while [ "$remaining" -gt 0 ] && [ ! -S "$control/$interface" ]; do
+    remaining=$((remaining - 1))
+    sleep 1
+done
+[ -S "$control/$interface" ] || fail control_socket_unavailable
+
+mac=$(tr -d ':' < "/sys/class/net/$interface/address")
+case "$mac" in
+    [0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]) ;;
+    *) fail invalid_wifi_address ;;
+esac
+
+bootstrap=$(wpa_cli -p "$control" -i "$interface" dpp_bootstrap_gen \
+    type=qrcode "mac=$mac" "chan=$channel")
+case "$bootstrap" in
+    *[!0-9]*|'') fail bootstrap_generation_failed ;;
+esac
+uri=$(wpa_cli -p "$control" -i "$interface" \
+    dpp_bootstrap_get_uri "$bootstrap")
+case "$uri" in
+    DPP:*';;' ) ;;
+    *) fail bootstrap_uri_failed ;;
+esac
+
+wpa_cli -p "$control" -i "$interface" dpp_listen "$frequency" \
+    role=enrollee netrole=sta >/dev/null
+
+announce() {
+    printf '\nOSE_DPP_PROBE_URI_BEGIN\n%s\nOSE_DPP_PROBE_URI_END\n\n' "$uri" \
+        > /dev/console
+}
+announce
+
+remaining=300
+announce_after=10
+while [ "$remaining" -gt 0 ]; do
+    status=$(wpa_cli -p "$control" -i "$interface" status 2>/dev/null || true)
+    if printf '%s\n' "$status" | grep -Fqx 'wpa_state=COMPLETED'; then
+        printf 'OSE_DPP_PROBE_SUCCESS=authenticated_wifi_link\n' > /dev/console
+        printf 'OSE_DPP_PROBE_SUCCESS=authenticated_wifi_link\n'
+        exit 0
+    fi
+    remaining=$((remaining - 1))
+    announce_after=$((announce_after - 1))
+    if [ "$announce_after" -eq 0 ]; then
+        announce
+        announce_after=10
+    fi
+    sleep 1
+done
+
+fail provisioning_timeout

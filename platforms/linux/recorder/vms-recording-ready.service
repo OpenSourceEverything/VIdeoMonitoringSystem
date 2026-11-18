@@ -1,0 +1,14 @@
+[Unit]
+Description=Prepare the Video Monitoring System recording drive
+BindsTo=mnt-VMS_RECORDING.mount
+After=mnt-VMS_RECORDING.mount
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/chown vms:vms /mnt/VMS_RECORDING
+ExecStart=/usr/bin/chmod 0750 /mnt/VMS_RECORDING
+RemainAfterExit=yes
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full

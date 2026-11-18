@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "profile": "pilot-debug",
+  "image_reference": "raspios-32-vms-camera-preinstalled",
+  "release_version": "0.3.0-pilot.5",
+  "distribution_release": "trixie",
+  "architecture": "armhf",
+  "bits": 32,
+  "supported_boards": [
+    "zero-w",
+    "zero-2-w"
+  ],
+  "builder": {
+    "repository": "https://github.com/RPi-Distro/pi-gen.git",
+    "commit": "314262cb286b8f33327a6f0cbabe14c625021ca0"
+  },
+  "packages": [
+    "avahi-daemon",
+    "cloud-init",
+    "iputils-ping",
+    "network-manager",
+    "openssh-server",
+    "python3",
+    "python3-picamera2",
+    "raspi-config",
+    "sudo"
+  ]
+}

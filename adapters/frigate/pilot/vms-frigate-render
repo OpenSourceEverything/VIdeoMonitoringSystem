@@ -1,0 +1,121 @@
+#!/bin/sh
+set -eu
+
+data_directory=/var/lib/video-monitoring-system
+adapter_environment=/etc/vms/frigate-adapter
+hardware_environment=/etc/vms/frigate-hardware
+changed_option=
+
+if [ "$#" -gt 1 ] || { [ "$#" -eq 1 ] && [ "$1" != "--signal-change" ]; }; then
+    echo "Usage: vms-frigate-render [--signal-change]" >&2
+    exit 2
+fi
+if [ "$#" -eq 1 ]; then
+    changed_option=--changed-exit-code
+fi
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Frigate reconciliation must run through the appliance service." >&2
+    exit 2
+fi
+
+if [ -f "$adapter_environment" ]; then
+    if [ -L "$adapter_environment" ] || \
+        [ "$(stat -c %u "$adapter_environment")" != 0 ]; then
+        echo "Frigate adapter configuration is unsafe." >&2
+        exit 2
+    fi
+    case "$(stat -c %a "$adapter_environment")" in
+        400|600) ;;
+        *) echo "Frigate adapter configuration is unsafe." >&2; exit 2 ;;
+    esac
+    # This file is installed root-owned and contains paths, never credentials.
+    # shellcheck disable=SC1091
+    . "$adapter_environment"
+fi
+
+if [ -f "$hardware_environment" ]; then
+    if [ -L "$hardware_environment" ] || \
+        [ "$(stat -c %u "$hardware_environment")" != 0 ] || \
+        [ "$(stat -c %a "$hardware_environment")" != 440 ]; then
+        echo "Frigate hardware configuration is unsafe." >&2
+        exit 2
+    fi
+    # Root-owned hardware selections only; this file never contains secrets.
+    # shellcheck disable=SC1091
+    . "$hardware_environment"
+fi
+
+state_directory=${VMS_FRIGATE_STATE_DIR:-$data_directory/frigate}
+case "$state_directory" in
+    "$data_directory"/*) ;;
+    *) echo "Frigate state directory is outside product state." >&2; exit 2 ;;
+esac
+
+lan_interface=$(
+    ip -4 -o route show default 2>/dev/null |
+        awk '{ for (i = 1; i <= NF; i++) if ($i == "dev") { print $(i + 1); exit } }'
+)
+lan_address=$(
+    ip -4 -o address show dev "$lan_interface" scope global 2>/dev/null |
+        awk '{ split($4, address, "/"); print address[1]; exit }'
+)
+if [ -z "$lan_address" ]; then
+    echo "A recorder LAN address is unavailable." >&2
+    exit 1
+fi
+
+set -- --candidate "${lan_address}:8555"
+if command -v tailscale >/dev/null 2>&1; then
+    tailscale_address=$(tailscale ip -4 2>/dev/null | sed -n '1p')
+    if [ -n "$tailscale_address" ] && [ "$tailscale_address" != "$lan_address" ]; then
+        set -- "$@" --candidate "${tailscale_address}:8555"
+    fi
+fi
+if [ -n "$changed_option" ]; then
+    set -- "$@" "$changed_option"
+fi
+if [ "${VMS_FRIGATE_MJPEG_HARDWARE:-}" = v4l2m2m ]; then
+    set -- "$@" --mjpeg-hardware v4l2m2m
+fi
+case "${VMS_FRIGATE_MJPEG_SOFTWARE_PRESET:-superfast}" in
+    superfast|ultrafast) set -- "$@" --mjpeg-software-preset "${VMS_FRIGATE_MJPEG_SOFTWARE_PRESET:-superfast}" ;;
+    *) echo "MJPEG software encoder preset is invalid." >&2; exit 2 ;;
+esac
+case "${VMS_FRIGATE_VALIDATION_CONTINUOUS_DAYS:-0}" in
+    0|1) set -- "$@" --validation-continuous-days "${VMS_FRIGATE_VALIDATION_CONTINUOUS_DAYS:-0}" ;;
+    *) echo "Validation continuous days must be 0 or 1." >&2; exit 2 ;;
+esac
+
+install -d -o vms -g vms -m 0700 "$state_directory" "$state_directory/config"
+for generated in "$state_directory/environment" "$state_directory/config/config.yml"; do
+    if [ -f "$generated" ] && [ ! -L "$generated" ]; then
+        chown vms:vms "$generated"
+        chmod 0600 "$generated"
+    fi
+done
+
+cd /opt/video-monitoring-system
+set +e
+render_output=$(runuser -u vms -- \
+    env VMS_RECORDER_DEVICE_CONFIG=/etc/vms/device.json \
+    /opt/video-monitoring-system/bin/vms \
+    --data-dir "$data_directory" \
+    recorder reconcile-engine \
+    --state-dir "$state_directory" \
+    "$@" 2>&1)
+render_result=$?
+set -e
+
+if [ "$render_result" -eq 2 ] && \
+    [ -s "$state_directory/config/config.yml" ] && \
+    printf '%s\n' "$render_output" | \
+        grep -Fqx 'Error: A video-engine camera source is unavailable.'; then
+    echo "A camera is offline; keeping the last verified Frigate configuration." >&2
+    exit 0
+fi
+
+if [ -n "$render_output" ]; then
+    printf '%s\n' "$render_output"
+fi
+exit "$render_result"

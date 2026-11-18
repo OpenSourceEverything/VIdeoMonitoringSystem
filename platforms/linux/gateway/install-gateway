@@ -1,0 +1,95 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Run once: sudo $0" >&2
+    exit 2
+fi
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+repo_root=$(CDPATH= cd -- "$script_dir/../../.." && pwd)
+domain_file=/root/vms-domain
+
+if [ -s "$domain_file" ]; then
+    IFS= read -r domain < "$domain_file"
+else
+    printf 'Camera address (example: cameras.example.com): '
+    IFS= read -r domain
+fi
+
+domain=$(python3 -c '
+import re, sys
+value = sys.argv[1].strip().lower().rstrip(".")
+pattern = r"(?=.{4,253}\Z)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?"
+if re.fullmatch(pattern, value) is None:
+    raise SystemExit("Enter a hostname such as cameras.example.com")
+print(value)
+' "$domain")
+
+if ss -H -ltn '( sport = :80 or sport = :443 )' | grep -q .; then
+    if ! grep -q "Managed by Video Monitoring System owner gateway" \
+        /etc/caddy/Caddyfile 2>/dev/null
+    then
+        echo "Use a fresh dedicated droplet; web ports are already in use." >&2
+        exit 2
+    fi
+fi
+
+export DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt-get install -y python3 python3-venv openssh-server \
+    debian-keyring debian-archive-keyring apt-transport-https curl gpg \
+    iproute2 ufw
+ufw allow 22/tcp
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw --force enable
+
+if ! command -v caddy >/dev/null 2>&1; then
+    curl --fail --silent --show-error --location \
+        https://dl.cloudsmith.io/public/caddy/stable/gpg.key \
+        | gpg --dearmor --yes -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+    curl --fail --silent --show-error --location \
+        https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt \
+        -o /etc/apt/sources.list.d/caddy-stable.list
+    chmod 0644 /usr/share/keyrings/caddy-stable-archive-keyring.gpg \
+        /etc/apt/sources.list.d/caddy-stable.list
+    apt-get update
+    apt-get install -y caddy
+fi
+
+if ! getent passwd vms-gateway >/dev/null; then
+    useradd --system --user-group --create-home \
+        --home-dir /var/lib/vms-gateway --shell /usr/sbin/nologin vms-gateway
+fi
+install -d -o vms-gateway -g vms-gateway -m 0700 \
+    /var/lib/vms-gateway /var/lib/vms-gateway/.ssh
+
+python3 -m venv /opt/vms-gateway
+/opt/vms-gateway/bin/python -m pip install --disable-pip-version-check "$repo_root"
+install -D -m 0644 "$script_dir/vms-gateway-enrollment.service" \
+    /etc/systemd/system/vms-gateway-enrollment.service
+install -D -m 0644 "$script_dir/90-vms-gateway.conf" \
+    /etc/ssh/sshd_config.d/90-vms-gateway.conf
+install -D -m 0755 "$script_dir/vms-tunnel-hold" \
+    /usr/local/libexec/vms-tunnel-hold
+
+escaped_domain=$(printf '%s' "$domain" | sed 's/[\\&|]/\\&/g')
+sed "s|__VMS_DOMAIN__|$escaped_domain|g" "$script_dir/Caddyfile.template" \
+    > /etc/caddy/Caddyfile
+chmod 0644 /etc/caddy/Caddyfile
+caddy validate --config /etc/caddy/Caddyfile
+sshd -t
+
+enrollment_code=$(runuser -u vms-gateway -- \
+    /opt/vms-gateway/bin/vms-gateway --state-dir /var/lib/vms-gateway init)
+systemctl daemon-reload
+systemctl enable --now vms-gateway-enrollment.service
+systemctl reload ssh.service 2>/dev/null || systemctl reload sshd.service
+systemctl enable --now caddy.service
+systemctl reload caddy.service
+
+printf '\nGateway ready. On the recorder, run: sudo vms remote setup\n'
+printf 'Remote address: %s\n' "$domain"
+printf 'One-time droplet code: %s\n' "$enrollment_code"
+printf 'The code stops accepting a different recorder after first use.\n'

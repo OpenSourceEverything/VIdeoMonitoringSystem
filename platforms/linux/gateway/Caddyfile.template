@@ -1,0 +1,20 @@
+# Managed by Video Monitoring System owner gateway.
+__VMS_DOMAIN__ {
+	encode zstd gzip
+
+	handle_path /vms-enroll/* {
+		reverse_proxy 127.0.0.1:19080
+	}
+
+	handle {
+		reverse_proxy 127.0.0.1:19081
+	}
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "no-referrer"
+		-Server
+	}
+}

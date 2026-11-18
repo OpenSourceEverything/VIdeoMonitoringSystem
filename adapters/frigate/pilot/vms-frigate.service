@@ -1,0 +1,25 @@
+[Unit]
+Description=OSE Cameras private Frigate engine
+Requires=docker.service mnt-VMS_RECORDING.mount vms-camera-route-relay.service
+After=docker.service mnt-VMS_RECORDING.mount network-online.target vms-camera-route-relay.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=VMS_FRIGATE_STATE_DIR=/var/lib/video-monitoring-system/frigate
+Environment=VMS_FRIGATE_MEDIA_DIR=/mnt/VMS_RECORDING/frigate
+EnvironmentFile=-/etc/vms/frigate-adapter
+EnvironmentFile=/etc/vms/frigate-route-relay
+EnvironmentFile=/etc/vms/frigate-hardware
+ExecStartPre=/usr/local/libexec/vms-recording-recover --check-only
+ExecStartPre=/usr/local/libexec/vms-frigate-render
+ExecStartPre=-/usr/bin/docker rm -f vms-frigate
+ExecStart=/usr/bin/docker run --name vms-frigate --rm --log-opt max-size=10m --log-opt max-file=3 --shm-size=256m --network vms-frigate-private --add-host=ose-camera-route-relay.internal:${VMS_CAMERA_RELAY_BIND} $VMS_FRIGATE_HARDWARE_ARGUMENT -p 127.0.0.1:15000:5000 -p 127.0.0.1:15001:1984 -p 8555:8555/tcp -p 8555:8555/udp --env-file ${VMS_FRIGATE_STATE_DIR}/environment -v ${VMS_FRIGATE_STATE_DIR}/config:/config -v ${VMS_FRIGATE_MEDIA_DIR}:/media/frigate ghcr.io/blakeblackshear/frigate:0.18.0-standard-arm64
+ExecStop=/usr/bin/docker stop -t 30 vms-frigate
+Restart=on-failure
+RestartSec=5
+SuccessExitStatus=143
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

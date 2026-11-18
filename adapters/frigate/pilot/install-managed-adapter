@@ -1,0 +1,138 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Run as root: sudo $0" >&2
+    exit 2
+fi
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+image=ghcr.io/blakeblackshear/frigate:0.18.0-standard-arm64
+
+for command in docker flock install mktemp mv runuser stat systemctl timeout; do
+    command -v "$command" >/dev/null || {
+        echo "Required Frigate adapter tool is unavailable: $command" >&2
+        exit 1
+    }
+done
+id vms >/dev/null 2>&1 || {
+    echo "The OSE recorder runtime must be installed first." >&2
+    exit 1
+}
+test -x /opt/video-monitoring-system/bin/vms || {
+    echo "The OSE recorder runtime must be installed first." >&2
+    exit 1
+}
+docker image inspect "$image" >/dev/null 2>&1 || {
+    echo "The pinned Frigate image is not preloaded." >&2
+    exit 1
+}
+
+relay_network=vms-frigate-private
+if ! docker network inspect "$relay_network" >/dev/null 2>&1; then
+    docker network create \
+        --driver bridge \
+        --label org.open-source-everything.video-monitoring-system=frigate \
+        "$relay_network" >/dev/null
+fi
+relay_driver=$(docker network inspect --format '{{.Driver}}' "$relay_network")
+relay_gateway=$(
+    docker network inspect --format '{{(index .IPAM.Config 0).Gateway}}' "$relay_network"
+)
+relay_subnet=$(
+    docker network inspect --format '{{(index .IPAM.Config 0).Subnet}}' "$relay_network"
+)
+if [ "$relay_driver" != bridge ] || [ -z "$relay_gateway" ] || [ -z "$relay_subnet" ]; then
+    echo "The private Frigate network is invalid." >&2
+    exit 1
+fi
+install -d -o root -g vms -m 0750 /etc/vms
+relay_environment=$(mktemp /etc/vms/.frigate-route-relay.XXXXXX)
+hardware_environment=$(mktemp /etc/vms/.frigate-hardware.XXXXXX)
+rollback_environment() {
+    rm -f "$relay_environment" "$hardware_environment"
+}
+trap rollback_environment INT TERM HUP EXIT
+printf 'VMS_CAMERA_RELAY_BIND=%s\nVMS_CAMERA_RELAY_CLIENT_NETWORK=%s\n' \
+    "$relay_gateway" "$relay_subnet" >"$relay_environment"
+chown root:vms "$relay_environment"
+chmod 0440 "$relay_environment"
+mv "$relay_environment" /etc/vms/frigate-route-relay
+# Device presence does not prove that an encoder works. In particular the
+# legacy codec driver can hang without producing video or stopping cleanly.
+# Default to software conversion; preserve only an explicit, protected choice.
+if [ -e /etc/vms/frigate-hardware ] || [ -L /etc/vms/frigate-hardware ]; then
+    if [ -L /etc/vms/frigate-hardware ] || \
+        [ "$(stat -c %u /etc/vms/frigate-hardware)" != 0 ] || \
+        [ "$(stat -c %a /etc/vms/frigate-hardware)" != 440 ]; then
+        echo "Frigate hardware configuration is unsafe." >&2
+        exit 2
+    fi
+else
+    printf '%s\n' \
+        'VMS_FRIGATE_HARDWARE_ARGUMENT=' \
+        'VMS_FRIGATE_MJPEG_HARDWARE=' >"$hardware_environment"
+    chown root:vms "$hardware_environment"
+    chmod 0440 "$hardware_environment"
+    mv "$hardware_environment" /etc/vms/frigate-hardware
+fi
+rm -f "$hardware_environment"
+trap - INT TERM HUP EXIT
+
+install -D -o root -g root -m 0755 "$script_dir/vms-frigate-render" \
+    /usr/local/libexec/vms-frigate-render
+install -D -o root -g root -m 0755 "$script_dir/vms-frigate-reconcile" \
+    /usr/local/libexec/vms-frigate-reconcile
+install -D -o root -g root -m 0755 \
+    "$script_dir/../../../platforms/linux/recorder/vms-recording-recover" \
+    /usr/local/libexec/vms-recording-recover
+install -D -o root -g root -m 0755 "$script_dir/vms-camera-route-relay" \
+    /usr/local/libexec/vms-camera-route-relay
+for unit in \
+    vms-camera-route-relay.service \
+    vms-frigate.service \
+    vms-frigate-reconcile.path \
+    vms-frigate-reconcile.service \
+    vms-frigate-reconcile.timer
+do
+    install -D -o root -g root -m 0644 "$script_dir/$unit" "/etc/systemd/system/$unit"
+done
+install -d -o vms -g vms -m 0700 \
+    /var/lib/video-monitoring-system/frigate \
+    /var/lib/video-monitoring-system/frigate/config
+install -d -o vms -g vms -m 0750 /mnt/VMS_RECORDING/frigate
+
+systemctl daemon-reload
+/usr/local/libexec/vms-frigate-render >/dev/null
+legacy_active=false
+if systemctl is-active --quiet vms-frigate-pilot.service; then
+    legacy_active=true
+    systemctl stop vms-frigate-pilot.service
+fi
+rollback() {
+    systemctl stop vms-frigate.service >/dev/null 2>&1 || true
+    systemctl stop vms-camera-route-relay.service >/dev/null 2>&1 || true
+    if [ "$legacy_active" = true ]; then
+        systemctl start vms-frigate-pilot.service >/dev/null 2>&1 || true
+    fi
+}
+trap rollback INT TERM HUP EXIT
+systemctl enable \
+    vms-camera-route-relay.service \
+    vms-frigate.service \
+    vms-frigate-reconcile.path \
+    vms-frigate-reconcile.timer
+systemctl restart vms-camera-route-relay.service
+systemctl restart vms-frigate.service
+systemctl restart vms-recorder.service
+systemctl start vms-frigate-reconcile.path
+systemctl start vms-frigate-reconcile.timer
+systemctl is-active --quiet vms-camera-route-relay.service
+systemctl is-active --quiet vms-frigate.service
+systemctl is-active --quiet vms-frigate-reconcile.path
+systemctl is-active --quiet vms-frigate-reconcile.timer
+if [ "$legacy_active" = true ]; then
+    systemctl disable vms-frigate-pilot.service >/dev/null
+fi
+trap - INT TERM HUP EXIT
+echo "OSE private video engine is managed."

@@ -1,0 +1,17 @@
+[Unit]
+Description=OSE Cameras private Frigate pilot engine
+Requires=docker.service mnt-VMS_RECORDING.mount
+After=docker.service mnt-VMS_RECORDING.mount network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker rm -f vms-frigate-pilot
+ExecStart=/usr/bin/docker run --name vms-frigate-pilot --rm --log-opt max-size=10m --log-opt max-file=3 --shm-size=256m -p 127.0.0.1:15000:5000 -p 127.0.0.1:15001:1984 -p 8555:8555/tcp -p 8555:8555/udp --env-file /var/lib/video-monitoring-system/frigate-pilot/environment -v /var/lib/video-monitoring-system/frigate-pilot/config:/config -v /mnt/VMS_RECORDING/frigate-pilot:/media/frigate ghcr.io/blakeblackshear/frigate:0.18.0-standard-arm64
+ExecStop=/usr/bin/docker stop -t 30 vms-frigate-pilot
+
+[Install]
+WantedBy=multi-user.target

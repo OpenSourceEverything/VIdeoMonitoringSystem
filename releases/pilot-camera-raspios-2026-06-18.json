@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "release_version": "raspios-trixie-armhf-lite-2026-06-18-pilot",
+  "role": "camera",
+  "supported_boards": [
+    "zero-w",
+    "zero-2-w"
+  ],
+  "image": "https://downloads.raspberrypi.com/raspios_lite_armhf/images/raspios_lite_armhf-2026-06-19/2026-06-18-raspios-trixie-armhf-lite.img.xz",
+  "sha256": "ea4e84c501d6dd4f4b1d04eb84df133a03f90a05ee2e8ab849185c17c2b0707b",
+  "signature": null,
+  "channel": "development",
+  "architecture": "armhf",
+  "bits": 32,
+  "released": "2026-06-18"
+}

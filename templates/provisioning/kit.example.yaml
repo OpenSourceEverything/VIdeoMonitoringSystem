@@ -1,0 +1,7 @@
+schema_version: 1
+mode: kit
+camera_count: 4
+camera_model: zero-2-w
+network:
+  country: US
+  credential_source: prompt

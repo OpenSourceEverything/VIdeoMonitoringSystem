@@ -1,0 +1,14 @@
+[Unit]
+Description=Watch OSE camera state for private engine reconciliation
+
+[Path]
+PathChanged=/var/lib/video-monitoring-system/video-engine.json
+PathChanged=/var/lib/video-monitoring-system/imported-camera-sources.json
+PathChanged=/var/lib/video-monitoring-system/camera-endpoints.json
+PathChanged=/var/lib/video-monitoring-system/video-engine-policy.json
+PathChanged=/var/lib/video-monitoring-system/recorder-state.json
+PathChanged=/etc/vms/device.json
+Unit=vms-frigate-reconcile.service
+
+[Install]
+WantedBy=multi-user.target

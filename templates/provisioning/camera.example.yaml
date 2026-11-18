@@ -1,0 +1,8 @@
+schema_version: 1
+mode: camera
+camera_model: zero-w
+camera_number: 1
+network:
+  ssid: Example 2.4 GHz Network
+  country: US
+  credential_source: prompt
